@@ -1,0 +1,22 @@
+'db'=>array(
+    'class' => 'CDbConnection',
+    'connectionString' => 'pgsql:host=localhost;port=5432;dbname=yii_frontaccounting',
+    'emulatePrepare' => true,
+    'username' => 'postgres',
+    'password' => 'hidayah.2!',
+),
+'db' => array(
+    'class' => 'CDbConnection',
+    'connectionString' => 'oci:dbname=//localhost:1521/aaa',
+    //	'emulatePrepare' => true,
+    'username' => 'aaa',
+    'password' => 'aaa',
+),
+'db' => array(
+    'class' => 'CDbConnection',
+    'connectionString' => 'sqlsrv:server=TLM-PC\SQLEXPRESS; Database=yii_frontaccounting;',
+    //	'connectionString' => 'host=TLM-PC\SQLEXPRESS;dbname=yii_frontaccounting',
+    //	'emulatePrepare' => true,
+    'username' => '',
+    'password' => '',
+),

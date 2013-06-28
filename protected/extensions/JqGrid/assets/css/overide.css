@@ -1,0 +1,17 @@
+.ui-widget-content.jqgrow:hover {
+	background: #eaeaea;
+	color: black;
+}
+
+.ui-widget-content.jqgrow:hover td{
+	border-color: grey;
+}
+
+.ui-state-highlight.jqgrow:hover {
+	background: #ffeb80;
+}
+
+.ui-state-highlight.jqgrow:hover td{
+	border-color: #ffde2e;
+}
+

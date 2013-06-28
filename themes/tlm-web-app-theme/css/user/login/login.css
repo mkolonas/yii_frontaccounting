@@ -1,0 +1,67 @@
+#wrapper {
+	text-align: center;
+}
+#main,
+#main .block {
+	width: 100%;
+	background: transparent;
+	border: none;
+	border-radius: none;
+	box-shadow: none;
+}
+#content {
+	width: 480px;
+	display: inline-block;
+	padding: 0px;
+}
+#content h1 {
+	background: none repeat scroll 0 0 #261F1F;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	color: white;
+	text-shadow: none;
+	padding: 10px 15px;
+	margin: 0px;
+}
+
+#content > p {
+	margin: 25px 20px 0px 20px;
+}
+
+#content .form {
+	background: white;
+	padding: 10px 20px;
+	margin: 0px;
+	-moz-border-radius-bottomleft: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+div.form label {
+	color: #666666
+	text-align: right;
+	display: -moz-inline-block;
+	display: inline-block;
+	width: 25%;
+}
+div.form input {
+	display: -moz-inline-block;
+	display: inline-block;
+}
+
+div.form input[type=hidden] {
+	display: none;
+}
+
+.rememberMe,
+.buttons,
+.submit,
+.errorMessage,
+div.form .hint {
+	padding-left: 26%;
+	text-align: left;
+}

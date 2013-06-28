@@ -1,0 +1,31 @@
+table.jadwal {
+	border-collapse: collapse;
+}
+
+table.jadwal td {
+	border: 1px solid #EAEAEA;
+	font-size: 12px;
+	padding: 10px;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.masukan,
+.keluaran,
+.hasil,
+.lokasi
+ {
+	margin-bottom: 10px;
+}
+
+
+.masukan b,
+.keluaran b,
+.hasil b,
+.lokasi b
+ {
+	display: inline-block;
+	width: 75px;
+}

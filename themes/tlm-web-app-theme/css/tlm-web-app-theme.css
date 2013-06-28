@@ -1,0 +1,586 @@
+body{
+	min-width: 1000px;
+}
+
+#wrapper {
+	white-space: nowrap;
+	vertical-align: top;
+	text-align: center;
+}
+
+#content,
+#sidebar {
+	display: inline-block;
+	float: none;
+	text-align: left;
+	white-space: normal;
+    padding: 20px;
+	width: auto;
+}
+
+#content {
+	background: none repeat scroll 0 0 white;
+	-moz-border-radius: 8px;
+	border-radius: 6px;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+	min-width: 610px;	/* determined by cleditor */
+}
+
+#content > p {
+	width: 500px;
+}
+#content a.search-button {
+	display: block;
+}
+
+#sidebar {
+	min-width: 150px;
+	vertical-align: top;
+}
+
+
+
+div.flash-error,
+div.flash-warning,
+div.flash-success,
+div.flash-RightsSuccess {
+	padding: 12px 7px 12px 30px;
+	margin: auto auto 20px;
+	border-radius: 3px 3px 3px 3px;
+	font-size: 13px;
+	text-align: center;
+}
+
+div.flash-error {
+    background: url("web-app-theme/themes/default/images/messages/error.png") no-repeat scroll 10px center #CC4831;
+	color: white;
+	border: 1px solid #993624;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+div.flash-warning {
+    background: url("web-app-theme/themes/default/images/messages/warning.png") no-repeat scroll 10px center #F9C006;
+	color: white;
+	border: 1px solid #BB9004;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+div.flash-success,
+div.flash-RightsSuccess {
+    background: url("web-app-theme/themes/default/images/messages/notice.png") no-repeat scroll 10px center #C6E2F5;
+	color:#264409;
+	border: 1px solid rgb(138, 157, 170);
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7);
+}
+
+div.flash-error a {
+	color: white;
+}
+
+div.flash-warning a {
+	color: white;
+}
+
+div.flash-success a {
+	color:#264409;
+}
+
+div.form .rememberMe label {
+	display: inline;
+}
+
+div.view {
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs {
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+
+div.breadcrumbs span {
+	font-weight: bold;
+}
+
+div.form fieldset {
+	border: 1px solid #DDD;
+	padding: 10px;
+	margin: 0 0 10px 0;
+    -moz-border-radius:7px;
+}
+
+div.form .row {
+	margin: 5px 0;
+}
+
+div.form .hint {
+	margin: 0;
+	padding: 0;
+	color: #999;
+}
+
+div.form .note {
+	font-style: italic;
+}
+
+div.form span.required {
+	color: red;
+}
+
+div.form div.error label:first-child,
+div.form label.error,
+div.form span.error {
+	color: #C00;
+}
+
+div.form div.error input,
+div.form div.error textarea,
+div.form div.error select,
+div.form input.error,
+div.form textarea.error,
+div.form select.error,
+table.error {
+	background: #FEE;
+	border: 1px solid #C00;
+}
+
+div.form div.success input,
+div.form div.success textarea,
+div.form div.success select,
+div.form input.success,
+div.form textarea.success,
+div.form select.success {
+	background: #E6EFC2;
+	border-color: #C6D880;
+}
+
+
+div.form .errorSummary {
+	padding: 7px 7px 12px 30px;
+	margin: 0 0 20px 0;
+	background: url("web-app-theme/themes/default/images/messages/error.png") no-repeat scroll 10px center #CC4831;
+	border: 1px solid #993624;
+	border-radius: 3px 3px 3px 3px;
+	color: white;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+	font-size: 13px;
+}
+
+div.form .errorMessage {
+	color: red;
+	font-size: 0.9em;
+}
+
+div.form .errorSummary p {
+	margin: 0;
+	padding: 5px;
+}
+
+div.form .errorSummary ul {
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+div.wide.form label {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	text-align: right;
+	width: 100px;
+}
+
+div.wide.form .row {
+	clear: left;
+}
+
+div.wide.form .buttons,
+div.wide.form .hint,
+div.wide.form .errorMessage {
+	clear: left;
+	padding-left: 110px;
+}
+
+th.button-column,
+td.button-column {
+    width: 80px;
+    text-align: right;
+}
+
+.form select.select_field {
+    width: 100%;
+}
+
+div.form .answer-title {
+	font-weight: bold;
+}
+
+div.form .row.answer label {
+	display: inline;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+div.form .row.answer label .required {
+	vertical-align: top;
+}
+
+div.form .row.answer label {
+	font-weight: normal;
+}
+
+div.form .row.option {
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+
+.center-align {
+	text-align: center;
+}
+
+ul.mega-menu{
+	list-style:none;
+}
+
+.portlet-content {
+	margin: 0 0 15px 0;
+	background:#EFFDFF;
+}
+
+.portlet-decoration,
+.portlet-content {
+	background: none;
+	border: none;
+	padding: 0px;
+}
+
+.portlet-title {
+	border-bottom: 1px solid #261F1F;
+	padding: 10px 15px 10px 25px;
+	font-size: 13px;
+	font-family: "Museo700",helvetica,arial,sans-serif;
+	font-weight: normal;
+}
+
+.portlet-content ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+
+.operations li a,
+.operations li a:visited  {
+	display: block;
+	padding: 10px 15px;
+	color: #111111;
+	font-weight: normal;
+	font-family: "MuseoSans500",helvetica,arial,sans-serif;
+}
+
+table.detail-view tr.odd {
+	background: none repeat scroll 0 0 #F8F8F8;
+}
+
+table.detail-view tr.even {
+	background: none;
+}
+
+table.detail-view td,
+table.detail-view th {
+	border-bottom: 1px solid #EAEAEA;
+	padding: 10px;
+	Xfont-family: "MuseoSans500",helvetica,arial,sans-serif;
+	font-size: 12px;
+}
+
+.yiiTab ul.tabs {
+	background: url("web-app-theme/themes/default/images/boxbar-background.png") scroll center top #E0E0E0;
+	border-radius: 6px 6px 0px 0px;
+	border: 1px solid lightgrey;
+	border-bottom: none;
+	border-collapse:collapse;
+	Xbox-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.yiiTab ul.tabs {
+	display: block;
+	padding: 0px 0px 0px 3px;
+}
+
+.yiiTab ul.tabs a:link {
+	display: inline-block;
+	color: #111111;
+	background: none;
+	border: none;
+	padding: 8px 15px;
+}
+
+.yiiTab ul.tabs a.active {
+	background: white;
+}
+
+.yiiTab div.view {
+	border-radius: 0px 0px 6px 6px;
+	border: none;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.grid-view td.button-column {
+	white-space: nowrap;
+}
+
+ul.yiiPager li {
+	border-radius: 2px 2px 2px 2px;
+	display: inline-block;
+	min-width: 15px;
+	height: 14px;
+	background: url("web-app-theme/themes/default/images/button-background.png") repeat scroll 0 0 #DDDDDD;
+	padding: 6px;
+	margin: 0px;
+	border: 1px solid #C3C4BA;
+}
+
+ul.yiiPager .hidden a,
+ul.yiiPager a:link,
+ul.yiiPager a:visited {
+	font-family: "MuseoSans500",helvetica,arial,sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	border: none;
+	color: #111111;
+}
+
+ul.yiiPager .selected {
+	background: none repeat scroll 0 0 #261F1F;
+}
+
+ul.yiiPager .selected a {
+	background: none;
+	color: white;
+}
+
+/* TABLES
+ * assign 'table.table' to 'table.items'
+ * source: 'web-app-theme/base.css'
+ */
+
+.grid-view {
+	display: inline-block;
+}
+.grid-view table.items {
+	min-width: 610px;
+	width: auto;
+	border-collapse: collapse;  
+	margin-bottom: 15px;
+	margin: auto;
+}
+.grid-view table.items tr.even {
+	background: #f8f8f8;
+}
+.grid-view table.items tr.odd {
+	background: none;
+}
+.grid-view table.items th,
+.grid-view table.items td {
+	font-size: 12px;
+	width: 10px;
+}
+.grid-view table.items th {
+	padding: 10px;
+	text-align: left;
+	background: #eaeaea;
+	color: #222222;
+	font-weight: normal;
+}
+.grid-view table.items th.first {
+	width: 30px;
+}
+.grid-view table.items th.last {
+	width: 200px;  
+	min-width: 90px;
+}
+.grid-view table.items .checkbox {
+	margin-left: 10px;
+}
+.grid-view table.items td {
+	padding: 10px;
+	border-bottom: 1px solid #eaeaea;
+}
+.grid-view table.items td.last {
+	text-align: right;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.grid-view table.items th a {
+	color: #222222;
+	font-weight: normal;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+	height: 18px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+	font-family: "MuseoSans500",helvetica,arial,sans-serif;
+	font-size: 12px;
+	width: inherit;
+	min-width: 100%;
+}
+
+/* FILTER
+ * enhancement
+ * source: 'asset/.../gridview/style.css'
+ */
+.grid-view .filters input:focus,
+.grid-view .filters select:focus {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+}
+
+
+
+/* HEADER & FOOTER
+ * overide #header and #footer
+ * source: 'css/main.css'
+ */
+#footer {
+	padding: 20px;
+	text-align: center;
+}
+
+/* FORM
+ * overide 'table.items'
+ * source: 'asset/.../gridview/style.css'
+ */
+div.form input,
+div.form textarea,
+div.form select {
+	height: 18px;
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+	font-family: "MuseoSans500",helvetica,arial,sans-serif;
+	font-size: 12px;
+	background: none;
+	border: 1px solid #cccccc;
+	width: 400px;
+	margin: 0.2em 0 0.5em 0;
+}
+
+div.form textarea {
+	height: 51px;
+}
+
+div.form input[type=submit],
+div.form .jappendo button {
+	padding: 5px 10px 5px 7px;
+	background: url("web-app-theme/themes/default/images/button-background.png") repeat scroll center top #EDEEED;
+	border: 1px solid #C3C4BA;
+	-moz-border-radius: 5px;
+	border-radius: 3px 3px 3px 3px;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	width: auto;
+	height: auto;
+	font-size: 12px;
+}
+
+div.form input[type=submit][value=Create],
+div.form .appendoButtons :first-child {
+	background: url("../images/create.png") no-repeat scroll 5px center #EDEEED;
+	padding-left: 25px;
+}
+
+div.form input[type=submit][value=Save] {
+	background: url("../images/save.png") no-repeat scroll 5px center #EDEEED;
+	padding-left: 25px;
+}
+
+div.form input[type=submit][value="Login"] {
+	background: url("../images/key.png") no-repeat scroll 5px center #EDEEED;
+	padding-left: 25px;
+}
+
+div.form .appendoButtons :last-child {
+	background: url("../images/delete.png") no-repeat scroll 5px center #EDEEED;
+	padding-left: 25px;
+}
+
+div.form input[type=checkbox] {
+	width: auto;
+}
+
+div.search-form {
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+div.search-form input,
+div.search-form textarea,
+div.search-form select {
+	background: white;
+}
+
+div.search-form textarea {
+	height: 51px;
+}
+
+div.form label {
+	font-family: "MuseoSans500",helvetica,arial,sans-serif;
+	font-size: 14.4px;
+	font-weight: normal;
+	display: block;
+}
+
+/* FILTER
+ * enhancement
+ * source: 'asset/.../gridview/style.css'
+ */
+div.form input:focus,
+div.form textarea:focus,
+div.form select:focus {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+}
+
+.grid-view table.items tbody tr:hover,
+.grid-view table.items tbody tr:hover a {
+	background: #B7B7B7;
+	color: #a32403;
+}
+.grid-view table.items tr.selected,
+.grid-view table.items tr.selected a {
+	background: #6b6b6b;
+	color: white;
+}
+
+.grid-view table.items tr:hover.selected,
+.grid-view table.items tr:hover.selected a {
+	background: #6b6b6b;
+	color: white;
+}
+
+.chzn-container {
+    font-size: 12px;
+}
+.chzn-container-multi .chzn-choices {
+	padding-right: 5px;
+}
+
+.chzn-container-multi .chzn-choices .search-choice {
+	float: none;
+}
+
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close {
+	background-position: -50px 0px;
+	height: 9px;
+	margin-top: 2px;
+}
+
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+	background-position: -50px -9px;
+}

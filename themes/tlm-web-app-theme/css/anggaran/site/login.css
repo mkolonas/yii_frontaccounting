@@ -1,0 +1,53 @@
+#wrapper {
+	text-align: center;
+	padding: 20px;
+}
+
+#main,
+#main .block {
+	width: 100%;
+	background: transparent;
+	border: none;
+	border-radius: none;
+	box-shadow: none;
+}
+
+#content {
+	padding: 0px;
+}
+
+table td {
+	vertical-align: top;
+}
+
+#content h1 {
+	margin: 0px;
+}
+
+#content > p {
+	margin: 25px 20px 0px 20px;
+}
+
+#content .form {
+	background: white;
+	margin: 0px 40px 0px 0px;
+	width: 250px;
+}
+
+div.form label {
+	color: #666666
+	text-align: right;
+	display: -moz-inline-block;
+	display: inline-block;
+	width: 80px;
+}
+
+div.form input {
+	display: -moz-inline-block;
+	display: inline-block;
+	width: 150px;
+}
+
+div.form input[type=hidden] {
+	display: none;
+}

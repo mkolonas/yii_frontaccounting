@@ -1,0 +1,13 @@
+#item-belanja-langsung-grid .target-kinerja-id-cell {
+	min-width: 200px;
+}
+
+#item-belanja-langsung-grid .nama-cell {
+	min-width: 200px;
+}
+
+#item-belanja-langsung-grid .masukan-cell {
+	text-align: right;
+	white-space:nowrap;
+}
+

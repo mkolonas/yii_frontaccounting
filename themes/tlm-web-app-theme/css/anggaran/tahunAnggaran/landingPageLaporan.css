@@ -1,0 +1,9 @@
+.summary {
+	text-align: right;
+}
+
+.grid-view table.items th,
+.grid-view table.items td {
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+}

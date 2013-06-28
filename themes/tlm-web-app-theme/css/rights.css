@@ -1,0 +1,40 @@
+.generate-item-table .application-heading-row th,
+.generate-item-table th.module-heading-row,
+.generate-item-table th.module-row,
+.generate-item-table .controller-row td,
+.generate-item-table .action-row td {
+	padding: 10px;
+	font-weight: bold;
+	text-align: left;
+	color: #222222;
+	font-weight: normal;
+	border-bottom: 1px solid #EAEAEA;
+}
+
+.generate-item-table .application-heading-row th,
+.generate-item-table th.module-heading-row {
+	background: #eaeaea;
+	text-align: center;
+}
+
+.generate-item-table th.module-row {
+	background: none repeat scroll 0 0 #F8F8F8;
+}
+
+.generate-item-table .controller-row:hover,
+.generate-item-table .action-row:hover {
+	background: #ECFBD4;
+}
+
+.generate-item-table .action-row td.name-column {
+	padding-left: 50px;
+}
+
+.generate-item-table input[type=checkbox] {
+	margin: 0px;
+}
+
+div.form input[type=submit][value="Generate"] {
+	background: url("../images/save.png") no-repeat scroll left 5px center #EDEEED;
+	padding-left: 25px;
+}

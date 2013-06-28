@@ -1,0 +1,9 @@
+.form .row.rememberMe {
+    margin-bottom: 9px;
+}
+
+.form .row.rememberMe label,
+.form .row.rememberMe input {
+    display: inline-block;
+    margin: 0px;
+}

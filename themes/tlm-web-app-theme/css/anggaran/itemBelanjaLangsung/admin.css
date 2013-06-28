@@ -1,0 +1,20 @@
+.items .nama-kegiatan-cell {
+	min-width: 200px;
+}
+
+.items .deskripsi-keluaran-cell {
+	min-width: 200px;
+}
+
+.items .deskripsi-hasil-cell {
+	min-width: 200px;
+}
+
+.items .pemohon-id-cell {
+	white-space: nowrap;
+}
+
+.items .pelaksana-id-cell {
+	white-space: nowrap;
+}
+

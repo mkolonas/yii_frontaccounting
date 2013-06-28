@@ -1,0 +1,105 @@
+div.form div.success label
+{
+	color: inherit;
+}
+
+.not-folding {
+	white-space: nowrap;
+}
+.stripped-html {
+	width: 300px;
+	min-width: 300px;
+}
+.detail-view td {
+	max-width: 700px;
+}
+#tab-view .yiiTab .view {
+	max-width: 887px;
+}
+
+#content p.search-info,
+#content a.search-button {
+    display: none;
+}
+
+
+/* in ?r=question/view */
+.detailview-spacer {
+	height: 50px;
+}
+.empty-message {
+	height: 14px;
+	font-style: italic;
+	padding: 10px;
+}
+
+td div.hidden {
+	display: none;
+}
+
+td a.view-html-button {
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.form .row.question-set input[type=checkbox],
+.detail-view input[type=checkbox] {
+	display: inline-block;
+	margin: 0px;
+	vertical-align: middle;
+}
+
+div.form .row.question-set label {
+	display: inline-block;
+}
+
+.detail-view tr td label {
+	font-size: 12px;
+	font-family: "MuseoSans500",helvetica,arial,sans-serif;
+}
+
+#simulation .detail-view td,
+#generate-question .detail-view td {
+	min-width: 550px;
+}
+
+th span.category {
+	font-weight: normal;
+}
+
+p.not-available {
+	font-style: italic;
+}
+
+span.not-available,
+p.not-available span {
+	color: red;
+}
+
+span.examinee-exam-action,
+span.result-action {
+	display: block;
+	float: right;
+	vertical-align: middle;
+}
+
+table.detail-view td.action {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.centered-grid-container {
+	text-align: center;
+}
+
+.centered-grid-container .grid-view {
+	text-align: left;
+}
+
+.form-container {
+	min-width: 400px;
+}
+
+th.checkbox-container {
+	width: 13px;
+}

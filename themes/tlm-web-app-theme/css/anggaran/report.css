@@ -1,0 +1,37 @@
+.summary {
+	text-align: right;
+	margin: 0px 0px 5px;
+}
+
+
+.grid-view table.items th,
+.grid-view table.items td {
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+}
+
+.grid-view table.items th.jadwal,
+.grid-view table.items td.jadwal {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.grid-view table.items table.jadwal {
+	border-collapse: collapse;
+	min-height: 100%;
+}
+
+.grid-view table.items table.jadwal td {
+	min-width: 16px;
+	margin: 0px;
+	border-right: 1px solid #F8F8F8;
+	text-align: center;
+}
+
+.grid-view table.items td.nama-cell {
+	min-width: 500px;
+}
+
+.grid-view table.items th.blank-header {
+	min-width: 25px;
+}

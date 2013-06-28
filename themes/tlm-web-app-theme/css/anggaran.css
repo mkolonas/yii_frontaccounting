@@ -1,0 +1,20 @@
+.grid-view table.items th.triwulan-1,
+.triwulan-1 {
+	background: #ddeeFF;
+}
+
+.grid-view table.items th.triwulan-2,
+.triwulan-2 {
+	background: #aaeeee;
+}
+
+.grid-view table.items th.triwulan-3,
+.triwulan-3 {
+	background: #44dddd;
+}
+
+.grid-view table.items th.triwulan-4,
+.triwulan-4 {
+	background: #33bbcc;
+}
+

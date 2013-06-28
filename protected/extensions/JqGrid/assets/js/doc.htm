@@ -1,0 +1,2341 @@
+<style>
+	#static {
+		top: 0px;
+		position: fixed;
+		width: 100%;
+		padding: 10px;
+		background: lightgrey;
+	}
+	#title {
+		display: block;
+		float: right;
+		margin-right: 30px;
+	}
+	#spacer {
+		height: 36px;
+	}
+	table {
+		top: 40px;
+		border-collapse: collapse;
+	}
+	thead {
+		position: fixed;
+		background: lightgrey;
+	}
+	th, td {
+		border: 1px solid black;
+	}
+	.new-prop {
+		display: inline;
+	}
+	.old-prop {
+		display: none;
+	}
+	td.col3 {
+		font-family: monospace;
+		font-size: 13px;
+	}
+	.col1 code,
+	.col2 code {
+		background: #eeeeee;
+		border: 1px solid lightgrey;
+		padding: 0px 3px;
+	}
+</style>
+
+<div id="static">
+	<button>show old property</button><span id="title">The JqGrid Documentation</span>
+</div>
+
+<div id="spacer"></div>
+
+<table>
+<thead>
+<tr>
+	<th id="th0">name (new)</th>
+	<th id="th1">type</th>
+	<th id="th2">description</th>
+	<th id="th3">default</th>
+	<th id="th4">changed</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td colspan="5" style="height:24px; border:none;"></td>
+</tr>
+<tr id="grid.visible">
+	<td class="col0" id="td0">
+		<code class="new-prop">grid.visible</code><br/>
+		<code class="old-prop">grid.hiddengrid</code>
+	</td>
+	<td class="col1" id="td1"><code class="neutral">boolean</code></td>
+	<td class="col2" id="td2">If set to <code class="new-prop">false</code><code class="old-prop">true</code> the grid is initially is hidden. The data is not loaded (no request is sent) and only the caption layer is shown. When the show/hide button in caption layer is clicked for the first time to show grid, the request is sent to the server, the data is loaded, and grid is shown. From this point we have a regular grid. This option has effect only if the <code class="new-prop">grid.caption.text</code><code class="old-prop">grid.caption</code> property is not empty and the <code class="new-prop">grid.caption.showButton</code><code class="old-prop">grid.hidegrid</code> property (see below) is set to <code class="neutral">true</code>. </td>
+	<td class="col3" id="td3"><code class="new-prop">true</code><code class="old-prop">false</code></td>
+	<td class="col4" id="td4"> No</td>
+</tr>
+<tr id="grid.caption.text">
+	<td class="col0">
+		<code class="new-prop">grid.caption.text</code><br/>
+		<code class="old-prop">grid.caption</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Defines the caption for the grid. This caption appears in the caption layer, which is above the header layer (see <a href="/jqgridwiki/doku.php?id=wiki:how_it_works" class="wikilink1" title="wiki:how_it_works">How It Works</a>). If the string is empty the caption does not appear.</td>
+	<td class="col3">""</td>
+	<td class="col4"> No.Method avail.</td>
+</tr>
+<tr id="grid.caption.showButton">
+	<td class="col0">
+		<code class="new-prop">grid.caption.showButton</code><br/>
+		<code class="old-prop">grid.hidegrid</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Enables or disables the show/hide grid button, which appears on the right side of the caption layer (see <a href="/jqgridwiki/doku.php?id=wiki:how_it_works" class="wikilink1" title="wiki:how_it_works"> How It Works</a>). Takes effect only if the <code class="new-prop">grid.caption.text</code><code class="old-prop">grid.caption</code> property is not an empty string. </td>
+	<td class="col3">true</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.geo.width">
+	<td class="col0">
+		<code class="new-prop">grid.geo.width</code><br/>
+		<code class="old-prop">grid.width</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> If this option is not set, the width of the grid is the sum of the widths of the columns defined in the <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> (in pixels). If this option is set, the initial width of each column is set according to the value of the <code class="new-prop">grid.geo.applyShrinkToFit</code><code class="old-prop">grid.shrinkToFit</code> option. </td>
+	<td class="col3">none</td>
+	<td class="col4">No.Method avail.</td>
+</tr>
+<tr id="grid.geo.height">
+	<td class="col0">
+		<code class="new-prop">grid.geo.height</code><br/>
+		<code class="old-prop">grid.height</code>
+	</td>
+	<td class="col1">mixed</td>
+	<td class="col2"> The height of the grid. Can be set as number (in this case we mean pixels) or as percentage (only <code class="neutral">"100%"</code> is acceped) or value of <code class="neutral">"auto"</code> is acceptable. </td>
+	<td class="col3">150</td>
+	<td class="col4">No.Method avail.</td>
+</tr>
+<tr id="grid.geo.applyAutoWidth">
+	<td class="col0">
+		<code class="new-prop">grid.geo.applyAutoWidth</code><br/>
+		<code class="old-prop">grid.autowidth</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> When set to <code class="neutral">true</code>, the grid width is recalculated automatically to the width of the parent element. This is done only initially when the grid is created. In order to resize the grid when the parent element changes width you should apply custom code and use the <code class="neutral">setGridWidth</code> method for this purpose</td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.geo.applyShrinkToFit">
+	<td class="col0">
+		<code class="new-prop">grid.geo.applyShrinkToFit</code><br/>
+		<code class="old-prop">grid.shrinkToFit</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code> or <br/> <code class="neutral">integer</code></td>
+	<td class="col2"> This option, if set, defines how the the width of the columns of the grid should be re-calculated, taking into consideration the width of the grid. If this value is <code class="neutral">true</code>, and the width of the columns is also set, then every column is scaled in proportion to its width. For example, if we define two columns with widths 80 and 120 pixels, but want the grid to have a width of 300 pixels, then the columns will stretch to fit the entire grid, and the extra width assigned to them will depend on the width of the columns themselves and the extra width available. The re-calculation is done as follows: the first column gets the width (300(new width)/200(sum of all widths))*80(first column width) = 120 pixels, and the second column gets the width (300(new width)/200(sum of all widths))*120(second column width) = 180 pixels. Now the widths of the columns sum up to 300 pixels, which is the width of the grid. If the value is <code class="neutral">false</code> and the value in <code class="new-prop">grid.geo.width</code><code class="old-prop">grid.width</code> option is set, then no re-sizing happens whatsoever. So in this example, if <code class="new-prop">grid.geo.shrinkToFit</code><code class="old-prop">grid.shrinkToFit</code> is set to <code class="neutral">false</code>, column one will have a width of 80 pixels, column two will have a width of 120 pixels and the grid will retain the width of 300 pixels. If the value of shrinkToFit is an integer, the width is calculated according to it. <img src="fixme.gif" class="middle" alt="FIXME" /> - The effect of using an integer can be elaborated. </td>
+	<td class="col3">true</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.geo.applyForcedFit">
+	<td class="col0">
+		<code class="new-prop">grid.geo.applyForcedFit</code><br/>
+		<code class="old-prop">grid.forceFit</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">If set to <code class="neutral">true</code>, and a column's width is changed, the adjacent column (to the right) will resize so that the overall grid width is maintained (e.g., reducing the width of column 2 by 30px will increase the size of column 3 by 30px). In this case there is no horizontal scrollbar. <strong>Note:</strong> This option is not compatible with <code class="new-prop">grid.geo.shrinkToFit</code><code class="old-prop">grid.shrinkToFit</code> option - i.e if <code class="new-prop">grid.geo.shrinkToFit</code><code class="old-prop">grid.shrinkToFit</code> is set to <code class="neutral">false</code>, <code class="new-prop">grid.geo.applyForcedFit</code><code class="old-prop">grid.forceFit</code> is ignored.</td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.cellEdit.apply">
+	<td class="col0">
+		<code class="new-prop">grid.cellEdit.apply</code><br/>
+		<code class="old-prop">grid.cellEdit</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Enables (disables) cell editing. See <a href="/jqgridwiki/doku.php?id=wiki:cell_editing" class="wikilink1" title="wiki:cell_editing">Cell Editing</a> for more details</td>
+	<td class="col3">false</td>
+	<td class="col4"> Yes</td>
+</tr>
+<tr id="grid.cellEdit.submitType">
+	<td class="col0">
+		<code class="new-prop">grid.cellEdit.submitType</code><br/>
+		<code class="old-prop">grid.cellsubmit</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Determines where the contents of the cell are saved. Possible values are <code class="neutral">"remote"</code> and <code class="neutral">"clientArray"</code>. See <a href="/jqgridwiki/doku.php?id=wiki:cell_editing" class="wikilink1" title="wiki:cell_editing">Cell Editing</a> for more details.</td>
+	<td class="col3">"remote"</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.cellEdit.url">
+	<td class="col0">
+		<code class="new-prop">grid.cellEdit.url</code><br/>
+		<code class="old-prop">grid.cellurl</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">the url where the cell is to be saved. See <a href="/jqgridwiki/doku.php?id=wiki:cell_editing" class="wikilink1" title="wiki:cell_editing">Cell Editing</a> for more details</td>
+	<td class="col3">null</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.cellEdit.ajax">
+	<td class="col0">
+		<code class="new-prop">grid.cellEdit.ajax</code><br/>
+		<code class="old-prop">grid.ajaxCellOptions</code>
+	</td>
+	<td class="col1"><code class="neutral">object</code></td>
+	<td class="col2">This option allow to set global ajax settings for the cell editiing when we save the data to the server. Note that with this option is possible to overwrite all current ajax setting in the save request including the complete event.</td>
+	<td class="col3">{}</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.subGrid.apply">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.apply</code><br/>
+		<code class="old-prop">grid.subGrid</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> If set to <code class="neutral">true</code> this enables using a sub-grid. If the sub-grid is enabled, an additional column at left side is added to the basic grid. This column contains a "plus" image which indicates that the user can click on it to expand the row. By default all rows are collapsed. See <a href="/jqgridwiki/doku.php?id=wiki:subgrid" class="wikilink1" title="wiki:subgrid">Subgrid</a></td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.subGrid.model">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.model</code><br/>
+		<code class="old-prop">grid.subGridModel</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">This property, which describes the model of the subgrid, has an effect only if the <code class="new-prop">grid.subGrid.apply</code><code class="old-prop">grid.subGrid</code> is set to <code class="neutral">true</code>. It is an array in which we describe the column model for the subgrid data. For more information see <a href="/jqgridwiki/doku.php?id=wiki:subgrid" class="wikilink1" title="wiki:subgrid">Subgrid</a>.</td>
+	<td class="col3">[]</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.subGrid.options">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.options</code><br/>
+		<code class="old-prop">grid.subGridOptions</code>
+	</td>
+	<td class="col1"><code class="neutral">object</code></td>
+	<td class="col2">A set of additional options for the subgrid. For more information and default values see <a href="/jqgridwiki/doku.php?id=wiki:subgrid" class="wikilink1" title="wiki:subgrid">Subgrid</a>.</td>
+	<td class="col3"></td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.subGrid.type">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.type</code><br/>
+		<code class="old-prop">grid.subGridType</code>
+	</td>
+	<td class="col1">mixed</td>
+	<td class="col2"> This option allows loading a subgrid as a service. If not set, the <code class="new-prop">grid.data.type</code><code class="old-prop">grid.datatype</code> parameter of the parent grid is used.</td>
+	<td class="col3">null</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.subGrid.url">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.url</code><br/>
+		<code class="old-prop">grid.subGridUrl</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> This option has effect only if the <code class="new-prop">grid.subGrid.apply</code><code class="old-prop">grid.subGrid</code> option is set to <code class="neutral">true</code>. This option points to the url from which we get the data for the subgrid. jqGrid adds the id of the row to this url as parameter. If there is a need to pass additional parameters, use the <code>params</code> option in <code class="new-prop">grid.subGrid.model</code><code class="old-prop">grid.subGridModel</code>. See <a href="/jqgridwiki/doku.php?id=wiki:subgrid" class="wikilink1" title="wiki:subgrid">Subgrid</a></td>
+	<td class="col3">""</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.subGrid.width">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.width</code><br/>
+		<code class="old-prop">grid.subGridWidth</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Defines the width of the sub-grid column if <code class="new-prop">grid.subGrid.apply</code><code class="old-prop">grid.subGrid</code> is enabled.</td>
+	<td class="col3">20</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.subGrid.event.onBeforeExpand">
+	<td class="col1">
+		<code class="new-prop">grid.subGrid.event.onBeforeExpand</code><br/>
+		<code class="old-prop">grid.subGridBeforeExpand</code>
+	</td>
+	<td class="col1">pID, id</td>
+	<td class="col2">The event is raised just before expanding the grid. When set, this event should return <code class="neutral">true</code> or <code class="neutral">false</code>. If it returns <code class="neutral">false</code> the subgrid row is not expanded and the subgrid is not opened.</td>
+	<td class="col3"></td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.subGrid.event.onRowExpand">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.event.onRowExpand</code><br/>
+		<code class="old-prop">grid.subGridRowExpanded</code>
+	</td>
+	<td class="col1">pID, id</td>
+	<td class="col2">This event is raised when the subgrid is enabled and is executed when the user clicks on the plus icon of the grid. Can be used to put custom data in the subgrid.</td>
+	<td class="col3"></td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.subGrid.event.onRowColapse">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.event.onRowColapse</code><br/>
+		<code class="old-prop">grid.subGridRowColapsed</code>
+	</td>
+	<td class="col1">pID, id</td>
+	<td class="col2">This event is raised when the user clicks on the minus icon. The event should return <code class="neutral">true</code> or <code class="neutral">false</code>; when the returned value is <code class="neutral">false</code> the row can not be collapsed.</td>
+	<td class="col3"></td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.subGrid.event.onSerializeData">
+	<td class="col0">
+		<code class="new-prop">grid.subGrid.event.onSerializeData</code><br/>
+		<code class="old-prop">grid.serializeSubGridData</code>
+	</td>
+	<td class="col1">sPostData</td>
+	<td class="col2">If set this event can serialize the data passed to the ajax request. The function should return the serialized data. This event can be used when a custom data should be passed to the server - e.g - JSON string, <acronym title="Extensible Markup Language">XML</acronym> string and etc.</td>
+	<td class="col3"></td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.treeGrid.apply">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.apply</code><br/>
+		<code class="old-prop">grid.treeGrid</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Enables (disables) the tree grid format. For more details see <a href="/jqgridwiki/doku.php?id=wiki:treegrid" class="wikilink1" title="wiki:treegrid"> Tree Grid</a></td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.treeGrid.aNode">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.aNode</code><br/>
+		<code class="old-prop">grid.treeANode</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2"></td>
+	<td class="col3"></td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.treeGrid.dataType">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.dataType</code><br/>
+		<code class="old-prop">grid.treedatatype</code>
+	</td>
+	<td class="col1">mixed</td>
+	<td class="col2"> Gives the initial datatype (see <code class="new-prop">grid.data.type</code><code class="old-prop">grid.datatype</code>). Usually this should not be changed. During the reading process this option is equal to the <code class="new-prop">grid.data.type</code><code class="old-prop">grid.datatype</code>. </td>
+	<td class="col3">null</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.treeGrid.model">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.model</code><br/>
+		<code class="old-prop">grid.treeGridModel</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Deteremines the method used for the <code class="new-prop">grid.treeGrid.apply</code><code class="old-prop">grid.treeGrid</code>. The value can be either <code class="neutral">"nested"</code> or <code class="neutral">"adjacency"</code>. See <a href="/jqgridwiki/doku.php?id=wiki:treegrid" class="wikilink1" title="wiki:treegrid">Tree Grid</a></td>
+	<td class="col3">"nested"</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.treeGrid.icon">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.icon.*</code><br/>
+		<code class="old-prop">grid.treeIcons.*</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> This array sets the icons used in the tree grid. The icons should be a valid names from UI theme roller images.</td>
+	<td class="col3" style="white-space:nowrap;">{<br/>&nbsp;plus:"ui-icon-triangle-1-e",<br/>&nbsp;minus:"ui-icon-triangle-1-s",<br/>&nbsp;leaf:"ui-icon-radio-off"<br/>}</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.treeGrid.reader">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.reader</code><br/>
+		<code class="old-prop">grid.treeReader</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> Extends the <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> defined in the basic grid. The fields described here are appended to end of the <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> array and are hidden. This means that the data returned from the server should have values for these fields. For a full description of all valid values see <a href="/jqgridwiki/doku.php?id=wiki:treegrid" class="wikilink1" title="wiki:treegrid"> Tree Grid</a>.</td>
+	<td class="col3"> </td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.treeGrid.rootLevel">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.rootLevel</code><br/>
+		<code class="old-prop">grid.tree_root_level</code>
+	</td>
+	<td class="col1">numeric</td>
+	<td class="col2"> Defines the level where the root element begins when treeGrid is enabled. </td>
+	<td class="col3">0</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.treeGrid.applyExpandColumnClick">
+	<td class="col0">
+		<code class="new-prop">grid.treeGrid.applyExpandColumnClick</code><br/>
+		<code class="old-prop">grid.ExpandColClick</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> When <code class="neutral">true</code>, the tree grid (see <code class="new-prop">grid.treeGrid.apply</code><code class="old-prop">grid.treeGrid</code>) is expanded and/or collapsed when we click anywhere on the text in the expanded column. In this case it is not necessary to click exactly on the icon. </td>
+	<td class="col3">true</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.gridView.apply">
+	<td class="col0">
+		<code class="new-prop">grid.gridView.apply</code><br/>
+		<code class="old-prop">grid.gridview</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> In the previous versions of jqGrid including 3.4.X, reading a relatively large data set (number of rows &gt;= 100 ) caused speed problems. The reason for this was that as every cell was inserted into the grid we applied about 5 to 6 jQuery calls to it. Now this problem is resolved; we now insert the entry row at once with a jQuery append. The result is impressive - about 3 to 5 times faster. What will be the result if we insert all the data at once? Yes, this can be done with a help of <code class="new-prop">grid.gridView.apply</code><code class="old-prop">grid.gridview</code> option  (set it to <code class="neutral">true</code>). The result is a grid that is 5 to 10 times faster. Of course, when this option is set to <code class="neutral">true</code> we have some limitations. If set to <code class="neutral">true</code> we can not use <code class="new-prop">grid.treeGrid.apply</code><code class="old-prop">grid.treeGrid</code>, <code class="new-prop">grid.subGrid.apply</code><code class="old-prop">grid.subGrid</code>, or the <code>afterInsertRow</code> event. If you do not use these three options in the grid you can set this option to <code class="neutral">true</code> and enjoy the speed. </td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.data.options">
+	<td class="col0">
+		<code class="new-prop">grid.data.options</code><br/>
+		<code class="old-prop">grid.data</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">An array that stores the local data passed to the grid. You can directly point to this variable in case you want to load an array data. It can replace the <code class="neutral">addRowData</code> method which is slow on relative big data</td>
+	<td class="col3">[]</td>
+	<td class="col4"> Yes</td>
+</tr>
+<tr id="grid.data.str">
+	<td class="col0">
+		<code class="new-prop">grid.data.str</code><br/>
+		<code class="old-prop">grid.datastr</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The string of data when <code class="new-prop">grid.data.type</code><code class="old-prop">grid.datatype</code> parameter is set to <code class="neutral">"xmlstring"</code> or <code class="neutral">"jsonstring"</code></td>
+	<td class="col3">null</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.data.type">
+	<td class="col0">
+		<code class="new-prop">grid.data.type</code><br/>
+		<code class="old-prop">grid.datatype</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Defines in what format to expect the data that fills the grid. Valid options are <code class="neutral">"xml"</code> (we expect data in xml format), <code class="neutral">"xmlstring"</code> (we expect xml data as string), <code class="neutral">"json"</code> (we expect data in JSON format), <code class="neutral">"jsonstring"</code> (we expect JSON data as a string), <code class="neutral">"local"</code> (we expect data defined at client side (array data)), <code class="neutral">"javascript"</code> (we expect javascript as data), <code class="neutral">"function"</code> (custom defined function for retrieving data), or <code class="neutral">"clientSide"</code> to manually load data via the <code class="neutral">data</code> array. See <a href="/jqgridwiki/doku.php?id=wiki:colmodel_options" class="wikilink1" title="wiki:colmodel_options"> colModel API</a> and <a href="/jqgridwiki/doku.php?id=wiki:retrieving_data" class="wikilink1" title="wiki:retrieving_data"> Retrieving Data</a></td>
+	<td class="col3">"xml"</td>
+	<td class="col4"> Yes</td>
+</tr>
+<tr id="grid.dataRmt.url">
+	<td class="col0">
+		<code class="new-prop">grid.dataRmt.url</code><br/>
+		<code class="old-prop">grid.url</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The url of the file that returns the data needed to populate the grid.  May be set to <code class="neutral">"clientArray"</code> to manualy post data to server; see <a href="/jqgridwiki/doku.php?id=wiki:inline_editing_s_clientarray" class="wikilink2" title="wiki:inline_editing_s_clientarray" rel="nofollow">Inline Editing</a>. </td>
+	<td class="col3">null</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.method">
+	<td class="col0">
+		<code class="new-prop">grid.method</code><br/>
+		<code class="old-prop">grid.mtype</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Defines the type of request to make ("POST" or "GET") </td>
+	<td class="col3">"GET"</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.dataRmt.prmName">
+	<td class="col0">
+		<code class="new-prop">grid.dataRmt.prmName.*</code><br/>
+		<code class="old-prop">grid.prmNames.*</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">This customizes names of the fields sent to the server on a POST request.<br/><br/>For example, with this setting, you can change the sort order element from <code class="neutral">"sidx"</code> to <code class="neutral">"mysort"</code> by setting <code>prmNames: {sort:"mysort"}</code>. The string that will be POST-ed to the server will then be <code style="white-space:nowrap;">myurl.php?page=1&amp;rows=10&amp;<u>mysort</u>=myindex&amp;sord=asc</code>  rather than <code style="white-space:nowrap;">myurl.php?page=1&amp;rows=10&amp;<u>sidx</u>=myindex&amp;sord=asc</code> <br/>  So the value of the column on which to sort upon can be obtained by looking at <code class="neutral">$POST["mysort"]</code> in <acronym title="Hypertext Preprocessor">PHP</acronym>. When some parameter is set to null, it will be not sent to the server. For example if we set <code class="new-prop">prmName: {nd:null}</code><code class="old-prop">prmNames: {nd:null}</code> the <code>nd</code> parameter will not be sent to the server.  For <code>npage</code> option see the <code>scroll</code> option. <br/><br/>  These options have the following meaning and default values: <br/>  <code>page</code>: the requested page<br/> <code>rows</code>: the number of rows requested<br/>  <code>sort</code>: the sorting column<br/>  <code>order</code>: the sort order <br/>  <code>search</code>: the search indicator<br/>  <code>nd</code>: the time passed to the request (for <acronym title="Internet Explorer">IE</acronym> browsers not to cache the request)<br/>  <code>id</code>: the name of the id when POST-ing data in editing modules<br/>  <code>oper</code>: the operation parameter<br/>  <code>editoper</code>: the name of operation when the data is POST-ed in edit mode<br/>  <code>addoper</code>: the name of operation when the data is posted in add mode<br/>  <code>deloper</code>: the name of operation when the data is posted in delete mode<br/>  <code>totalrows</code>: the number of the total rows to be obtained from server - see <code class="new-prop">grid.rowTotal</code><code class="old-prop">grid.rowTotal</code><br/>  <code>subgridid</code>: the name passed when we click to load data in the subgrid</td>
+	<td class="col3">{<br/>&nbsp;page:"page",<br/>&nbsp;rows:"rows",<br/>&nbsp;sort:"sidx",<br>&nbsp;order:"sord",<br>&nbsp;search:"_search",<br/>&nbsp;nd:"nd",<br/>&nbsp;id:"id",<br/>&nbsp;oper:"oper",<br/>&nbsp;editoper:"edit",<br/>&nbsp;addoper:"add",<br/>&nbsp;deloper:"del",<br/>&nbsp;subgridid:"id",<br/>&nbsp;npage:null,<br/>&nbsp;totalrows:"totalrows"<br>}</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.dataRmt.loadingText">
+	<td class="col0">
+		<code class="new-prop">grid.dataRmt.loadingText</code><br/>
+		<code class="old-prop">grid.loadtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The text which appears when requesting and sorting data. This parameter is located in language file. </td>
+	<td class="col3">"Loading..."</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.dataRmt.loadUi">
+	<td class="col0">
+		<code class="new-prop">grid.dataRmt.loadUi</code><br/>
+		<code class="old-prop">grid.loadui</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> This option controls what to do when an ajax operation is in progress.<br/>  <code class="neutral">"disable"</code> - disables the jqGrid progress indicator. This way you can use your own indicator.<br/>  <code class="neutral">"enable"</code> (default) - shows the text set in the <code class="new-prop">grid.dataRmt.loadingText</code><code class="old-prop">grid.loadtext</code> property (default value is <code class="neutral">"Loading..."</code>) in the center of the grid. <br/>  <code class="neutral">"block"</code> - displays the text set in the <code class="new-prop">grid.dataRmt.loadingText</code><code class="old-prop">grid.loadtext</code> property and blocks all actions in the grid until the ajax request completes. Note that this disables paging, sorting and all actions on toolbar, if any. </td>
+	<td class="col3">"enable"</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.dataLcl.applyMultiSort">
+	<td class="col0">
+		<code class="new-prop">grid.dataLcl.applyMultiSort</code><br/>
+		<code class="old-prop">grid.multiSort</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">If set to <code class="neutral">true</code> enables the multisorting. The options work if the datatype is local. In case when the data is obtained from the server the <em>sidx</em> parameter contain the order clause. It is a comma separated string in format field1 asc, field2 desc …, fieldN. Note that the last field does not not have asc or desc. It should be obtained from sord parameter <br/>  When the option is <code class="neutral">true</code> the behavior is a s follow. The first click of the header field sort the field depending on the firstsortoption parameter in colModel or sortorder grid parameter. The next click sort it in reverse order. The third click removes the sorting from this field</td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.column.template">
+	<td class="col0">
+		<code class="new-prop">grid.column.template</code><br/>
+		<code class="old-prop">grid.cmTemplate</code>
+	</td>
+	<td class="col1"><code class="neutral">object</code> </td>
+	<td class="col2"> Defines a set of properties which override the default values in <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code>. For example if you want to make all columns not sortable, then only one propery here can be specified instead of specifying it in all columns in <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> </td>
+	<td class="col3"> null </td>
+	<td class="col4"> No </td>
+</tr>
+<tr id="grid.column.names">
+	<td class="col0">
+		<code class="new-prop">grid.column.names</code><br/>
+		<code class="old-prop">grid.colNames</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">An array in which we place the names of the columns. This is the text that appears in the head of the grid (header layer). The names are separated with commas. Note that the number of elements in this array should be equal of the number elements in the <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> array.</td>
+	<td class="col3">[]</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.column.models">
+	<td class="col0">
+		<code class="new-prop">grid.column.models</code><br/>
+		<code class="old-prop">grid.colModel</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.row.applyHover">
+	<td class="col0">
+		<code class="new-prop">grid.row.applyHover</code><br/>
+		<code class="old-prop">grid.hoverrows</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> When set to <code class="neutral">false</code> the effect of mouse hovering over the grid data rows is disabled.</td>
+	<td class="col3">true</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.row.alternateFormat.apply">
+	<td class="col0">
+		<code class="new-prop">grid.row.alternateFormat.apply</code><br/>
+		<code class="old-prop">grid.altRows</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Set a zebra-striped grid (alternate rows have different styles)</td>
+	<td class="col3"> false</td>
+	<td class="col4"> Yes. After reload</td>
+</tr>
+<tr id="grid.row.alternateFormat.cssClass">
+	<td class="col0">
+		<code class="new-prop">grid.row.alternateFormat.cssClass</code><br/>
+		<code class="old-prop">grid.altclass</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The class that is used for applying different styles to alternate (zebra) rows in the grid. You can construct your own class and replace this value. This option is valid only if the <code class="new-prop">grid.row.alternateFormat.apply</code><code class="old-prop">grid.altRows</code> option is set to true</td>
+	<td class="col3">"ui-priority-secondary"</td>
+	<td class="col4">Yes. Requires reload</td>
+</tr>
+<tr id="grid.row.emptyRecordText">
+	<td class="col0">
+		<code class="new-prop">grid.row.emptyRecordText</code><br/>
+		<code class="old-prop">grid.emptyrecords</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The string to display when the returned (or the current) number of records in the grid is zero. This option is valid only if <code class="new-prop">navBar.data.visible</code><code class="old-prop">grid.viewrecords</code> option is set to <code class="neutral">true</code>.</td>
+	<td class="col3">see lang file</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.row.multiSelect.apply">
+	<td class="col0">
+		<code class="new-prop">grid.row.multiSelect.apply</code><br/>
+		<code class="old-prop">grid.multiselect</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> If this flag is set to <code class="neutral">true</code> a multi selection of rows is enabled. A new column at left side containing checkboxes is added. Can be used with any datatype option. </td>
+	<td class="col3">false</td>
+	<td class="col4"> No. see HOWTO</td>
+</tr>
+<tr id="grid.row.multiSelect.applyBoxOnly">
+	<td class="col0">
+		<code class="new-prop">grid.row.multiSelect.applyBoxOnly</code><br/>
+		<code class="old-prop">grid.multiboxonly</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> This option works only when the <code class="new-prop">grid.row.multiSelect.apply</code><code class="old-prop">grid.multiselect</code> option is set to <code class="neutral">true</code>. When <code class="new-prop">grid.row.multiSelect.apply</code><code class="old-prop">grid.multiselect</code> is set to <code class="neutral">true</code>, clicking anywhere on a row selects that row; when <code class="new-prop">grid.row.multiSelect.applyBoxOnly</code><code class="old-prop">multiboxonly</code> is also set to <code class="neutral">true</code>, the multiselection is done only when the checkbox is clicked (Yahoo style). Clicking in any other row (suppose the checkbox is not clicked) deselects all rows and selects the current row. </td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.row.multiSelect.boxCellWidth">
+	<td class="col0">
+		<code class="new-prop">grid.row.multiSelect.boxCellWidth</code><br/>
+		<code class="old-prop">grid.multiselectWidth</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Determines the width of the checkbox column created when the <code class="new-prop">grid.row.multiSelect.apply</code><code class="old-prop">grid.multiselect</code> option is enabled. </td>
+	<td class="col3">20</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.row.multiSelect.useKey">
+	<td class="col0">
+		<code class="new-prop">grid.row.multiSelect.useKey</code><br/>
+		<code class="old-prop">grid.multikey</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">This parameter makes sense only when the <code class="new-prop">grid.row.multiSelect.apply</code><code class="old-prop">grid.multiselect</code> option is set to <code class="neutral">true</code>. Defines the key which should be pressed when we make multiselection. The possible values are: <code class="neutral">"shiftKey"</code> - the user should press Shift Key, <code class="neutral">"altKey"</code> - the user should press Alt Key, and <code class="neutral">"ctrlKey"</code> - the user should press Ctrl Key. </td>
+	<td class="col3">""</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.row.applyDeselectAfterSort">
+	<td class="col0">
+		<code class="new-prop">grid.row.applyDeselectAfterSort</code><br/>
+		<code class="old-prop">grid.deselectAfterSort</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Applicable only when we use <code class="new-prop">grid.data.type: "local"</code><code class="old-prop">grid.datatype: "local"</code>. Deselects currently selected row(s) when a sort is applied.</td>
+	<td class="col3">true</td>
+	<td class="col4"> Yes</td>
+</tr>
+<tr id="grid.row.applyFooter">
+	<td class="col0">
+		<code class="new-prop">grid.row.applyFooter</code><br/>
+		<code class="old-prop">grid.footerrow</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">If set to <code class="neutral">true</code> this will place a footer table with one row below the gird records and above the pager. The number of columns equal those specified in <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code></td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.row.numbering.apply">
+	<td class="col0">
+		<code class="new-prop">grid.row.numbering.apply</code><br/>
+		<code class="old-prop">grid.rownumbers</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> If this option is set to <code class="neutral">true</code>, a new column at left of the grid is added. The purpose of this column is to count the number of available rows, beginning from 1. In this case <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> is extended automatically with new element with the name <code>rn</code>. <strong>Note:</strong> Do not to use the name <code>rn</code> in the <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code>. </td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.row.numbering.width">
+	<td class="col0">
+		<code class="new-prop">grid.row.numbering.width</code><br/>
+		<code class="old-prop">grid.rownumWidth</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Determines the width of the row number column if <code class="new-prop">grid.row.numbering.apply</code><code class="old-prop">grid.rownumbers</code> option is set to <code class="neutral">true</code>. </td>
+	<td class="col3">25</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.row.event.onRightClick">
+	<td class="col0">
+		<code class="new-prop">grid.row.event.onRightClick</code><br/>
+		<code class="old-prop">grid.onRightClickRow</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.row.event.onSelect">
+	<td class="col0">
+		<code class="new-prop">grid.row.event.onSelect</code><br/>
+		<code class="old-prop">grid.onSelectRow</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.row.event.onSelectAll">
+	<td class="col0">
+		<code class="new-prop">grid.row.event.onSelectAll</code><br/>
+		<code class="old-prop">grid.onSelectAll</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.cell.layout">
+	<td class="col0">
+		<code class="new-prop">grid.cell.layout</code><br/>
+		<code class="old-prop">grid.cellLayout</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2">This option determines the padding + border width of the cell. Usually this should not be changed, but if custom changes to the <code>td</code> element are made in the grid css file, this will need to be changed. The initial value of 5 means paddingLef(2) + paddingRight (2) + borderLeft (1) = 5</td>
+	<td class="col3">5</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.cell.direction">
+	<td class="col0">
+		<code class="new-prop">grid.cell.direction</code><br/>
+		<code class="old-prop">grid.direction</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Determines the direction of text in the grid. The default is <code class="neutral">"ltr"</code> (Left To Right). When set to <code class="neutral">"rtl"</code>  (Right To Left) the grid automatically changes the direction of the text. It is important to note that in one page we can have two (or more) grids where the one can have direction <code class="neutral">"ltr"</code> while the other can have direction <code class="neutral">"rtl"</code>. This option works only in Firefox 3.x versions and Internet Explorer versions &gt;=6. Currently Safari, Google Chrome and Opera do not completely support changing the direction to <code class="neutral">"rtl"</code>. The most common problem in Firefox is that the default settings of the browser do not support <code class="neutral">"rtl"</code>. In order change this see this <a href="/jqgridwiki/doku.php?id=wiki:howto_grid_base" class="wikilink1" title="wiki:howto_grid_base">HOW TO</a> section in this chapter .</td>
+	<td class="col3">"ltr"</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.afterInsertRow">
+	<td class="col0">
+		<code class="new-prop">grid.afterInsertRow</code><br/>
+		<code class="old-prop">grid.afterInsertRow</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.ajaxGridOptions">
+	<td class="col0">
+		<code class="new-prop">grid.ajaxGridOptions</code><br/>
+		<code class="old-prop">grid.ajaxGridOptions</code>
+	</td>
+	<td class="col1"><code class="neutral">object</code></td>
+	<td class="col2">This option allows to set global ajax settings for the grid when requesting data. Note that with this option it is possible to overwrite all current ajax settings in the grid including the <code class="neutral">error</code>, <code class="neutral">complete</code> and <code class="neutral">beforeSend</code> events.</td>
+	<td class="col3">{}</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.ajaxSelectOptions">
+	<td class="col0">
+		<code class="new-prop">grid.ajaxSelectOptions</code><br/>
+		<code class="old-prop">grid.ajaxSelectOptions</code>
+	</td>
+	<td class="col1"><code class="neutral">object</code></td>
+	<td class="col2">This option allows to set global ajax settings for the select element when the select is obtained via <code>dataUrl</code> option in <code>editoptions</code> or <code>searchoptions</code> objects</td>
+	<td class="col3">{}</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.applyAutoEncode">
+	<td class="col0">
+		<code class="new-prop">grid.applyAutoEncode</code><br/>
+		<code class="old-prop">grid.autoencode</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">When set to <code class="neutral">true</code> encodes (html encode) the incoming (from server) and posted data (from editing modules). For example <code class="neutral">"&lt;"</code> will be converted to <code class="neutral">"&amp;lt;"</code>.</td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.beforeProcessing">
+	<td class="col0">
+		<code class="new-prop">grid.beforeProcessing</code><br/>
+		<code class="old-prop">grid.beforeProcessing</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.beforeRequest">
+	<td class="col0">
+		<code class="new-prop">grid.beforeRequest</code><br/>
+		<code class="old-prop">grid.beforeRequest</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.beforeSelectRow">
+	<td class="col0">
+		<code class="new-prop">grid.beforeSelectRow</code><br/>
+		<code class="old-prop">grid.beforeSelectRow</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.applyDeepEmpty">
+	<td class="col0">
+		<code class="new-prop">grid.applyDeepEmpty</code><br/>
+		<code class="old-prop">grid.deepempty</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">This option should be set to <code class="neutral">true</code> if an event or a plugin is attached to the table cell. The option uses jQuery empty for the the row and all its children elements. This of course has speed overhead, but prevents memory leaks. This option should be set to <code class="neutral">true</code> if a sortable rows and/or columns are activated.</td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.editUrl">
+	<td class="col0">
+		<code class="new-prop">grid.editUrl</code><br/>
+		<code class="old-prop">grid.editurl</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Defines the url for inline and form editing. May be set to <code class="neutral">"clientArray"</code> to manually post data to server, see <a href="/jqgridwiki/doku.php?id=wiki:inline_editing_s_clientarray" class="wikilink2" title="wiki:inline_editing_s_clientarray" rel="nofollow">Inline Editing</a>. </td>
+	<td class="col3">null</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.expandColumn">
+	<td class="col0">
+		<code class="new-prop">grid.expandColumn</code><br/>
+		<code class="old-prop">grid.ExpandColumn</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Indicates which column (name from <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code>) should be used to expand the tree grid. If not set the first one is used. Valid only when the <code class="new-prop">grid.treeGrid.apply</code><code class="old-prop">grid.treeGrid</code> option is set to <code class="neutral">true</code>.</td>
+	<td class="col3">null</td>
+	<td class="col4"> No</td>
+</tr>
+<tr id="grid.gridComplete">
+	<td class="col0">
+		<code class="new-prop">grid.gridComplete</code><br/>
+		<code class="old-prop">grid.gridComplete</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.gridState">
+	<td class="col0">
+		<code class="new-prop">grid.gridState</code><br/>
+		<code class="old-prop">grid.gridstate</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Determines the current state of the grid (i.e. when used with <code class="new-prop">grid.visible</code><code class="old-prop">grid.hiddengrid</code>, <code class="new-prop">grid.caption.showButton</code><code class="old-prop">grid.hidegrid</code> and <code class="new-prop">grid.caption.text</code><code class="old-prop">grid.caption</code> options). Can have either of two states: <code class="neutral">"visible"</code> or <code class="neutral">"hidden"</code>. </td>
+	<td class="col3">"visible"</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.hasGrouping">
+	<td class="col0">
+		<code class="new-prop">grid.hasGrouping</code><br/>
+		<code class="old-prop">grid.grouping</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Enables grouping in grid. Please refer to the <a href="/jqgridwiki/doku.php?id=wiki:grouping" class="wikilink1" title="wiki:grouping">Grouping</a> page. </td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.groupingView.groupField">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.groupField</code><br/>
+		<code class="old-prop">grid.groupingView.groupField</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">Defines the name from <a href="/jqgridwiki/doku.php?id=wiki:colmodel_options" class="wikilink1" title="wiki:colmodel_options"> colModel</a> on which we group. The first value is the first lavel, the second values is the second level and etc. </td>
+	<td class="col3">[]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.groupOrder">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.groupOrder</code><br/>
+		<code class="old-prop">grid.groupingView.groupOrder</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">Defines the initial sort order of the group level. Can be asc for ascending or desc for descending order. If the grouping is enabled the default value is asc.</td>
+	<td class="col3">[]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.groupText">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.groupText</code><br/>
+		<code class="old-prop">grid.groupingView.groupText</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">Defines the grouping header text for the group level that will be displayed in the grid. By default if defined the value if {0} which means that the group value name will be displayed.  It is possible to specify another value {1} which meant the the total cont of this group will be displayed too. It is possible to set here any valid html content.</td>
+	<td class="col3">[]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.groupColumnShow">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.groupColumnShow</code><br/>
+		<code class="old-prop">grid.groupingView.groupColumnShow</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">Show/Hide the column on which we group. The value here should be a boolean <code class="neutral">true</code>/<code class="neutral">false</code> for the group level. If the grouping is enabled we set this value to <code class="neutral">true</code>. </td>
+	<td class="col3">[]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.groupSummary">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.groupSummary</code><br/>
+		<code class="old-prop">grid.groupingView.groupSummary</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">Enable or disable the summary (footer) row of the current group level. If grouping is set the default value for the group is <code class="neutral">false</code>.</td>
+	<td class="col3">[]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.showSummaryOnHide">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.showSummaryOnHide</code><br/>
+		<code class="old-prop">grid.groupingView.showSummaryOnHide</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Show or hide the summary (footer) row when we collapse the group.</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.sortItems">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.sortItems</code><br/>
+		<code class="old-prop">grid.groupingView.sortitems</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.groupingView.sortNames">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.sortNames</code><br/>
+		<code class="old-prop">grid.groupingView.sortnames</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.groupingView.summary">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.summary</code><br/>
+		<code class="old-prop">grid.groupingView.summary</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.groupingView.summaryVal">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.summaryVal</code><br/>
+		<code class="old-prop">grid.groupingView.summaryval</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.groupingView.plusIcon">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.plusIcon</code><br/>
+		<code class="old-prop">grid.groupingView.plusicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set the icon from jQuery UI  Theme Roller that will be used if the grouped row is collapsed</td>
+	<td class="col3">"ui-icon-circlesmall-plus"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="grid.groupingView.minusIcon">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.minusIcon</code><br/>
+		<code class="old-prop">grid.groupingView.minusicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set the icon from jQuery UI Theme Roller that will be used if the grouped row is expanded</td>
+	<td class="col3">"ui-icon-circlesmall-minus"</td>
+	<td class="col3"></td>
+</tr>
+<tr id="grid.groupingView.displayField">
+	<td class="col0">
+		<code class="new-prop">grid.groupingView.displayField</code><br/>
+		<code class="old-prop">grid.groupingView.displayField</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.hasHeaderTitles">
+	<td class="col0">
+		<code class="new-prop">grid.hasHeaderTitles</code><br/>
+		<code class="old-prop">grid.headertitles</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> If the option is set to <code class="neutral">true</code> the title attribute is added to the column headers. </td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.idPrefix">
+	<td class="col0">
+		<code class="new-prop">grid.idPrefix</code><br/>
+		<code class="old-prop">grid.idPrefix</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">When set, this string is added as prefix to the id of the row when it is built. </td>
+	<td class="col3">""</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.applyIgnoreCase">
+	<td class="col0">
+		<code class="new-prop">grid.applyIgnoreCase</code><br/>
+		<code class="old-prop">grid.ignoreCase</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">By default the local searching is case-sensitive. To make the local search and sorting not case-insensitive set this options to <code class="neutral">true</code> </td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.inlineData">
+	<td class="col0">
+		<code class="new-prop">grid.inlineData</code><br/>
+		<code class="old-prop">grid.inlineData</code>
+	</td>
+	<td class="col1"><code class="neutral">object</code></td>
+	<td class="col2">an array used to add content to the data posted to the server when we are in inline editing. </td>
+	<td class="col3">{}</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.jsonReader">
+	<td class="col0">
+		<code class="new-prop">grid.jsonReader</code><br/>
+		<code class="old-prop">grid.jsonReader</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> An array which describes the structure of the expected json data. For a full description and default setting, see <a href="/jqgridwiki/doku.php?id=wiki:retrieving_data#json_data" class="wikilink1" title="wiki:retrieving_data"> Retrieving Data JSON Data</a></td>
+	<td class="col3"> </td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.xmlReader">
+	<td class="col0">
+		<code class="new-prop">grid.xmlReader</code><br/>
+		<code class="old-prop">grid.xmlReader</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> An array which describes the structure of the expected xml data. For a full description refer to <a href="/jqgridwiki/doku.php?id=wiki:retrieving_data#xml_data" class="wikilink1" title="wiki:retrieving_data"> Retrieving Data in XML Format</a>. </td>
+	<td class="col3"> </td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.lastSort">
+	<td class="col0">
+		<code class="new-prop">grid.lastSort</code><br/>
+		<code class="old-prop">grid.lastsort</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Readonly property. Gives the index of last sorted column beginning from 0. </td>
+	<td class="col3">0</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.loadBeforeSend">
+	<td class="col0">
+		<code class="new-prop">grid.loadBeforeSend</code><br/>
+		<code class="old-prop">grid.loadBeforeSend</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.loadComplete">
+	<td class="col0">
+		<code class="new-prop">grid.loadComplete</code><br/>
+		<code class="old-prop">grid.loadComplete</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.loadError">
+	<td class="col0">
+		<code class="new-prop">grid.loadError</code><br/>
+		<code class="old-prop">grid.loadError</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.applyLoadOnce">
+	<td class="col0">
+		<code class="new-prop">grid.applyLoadOnce</code><br/>
+		<code class="old-prop">grid.loadonce</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">If this flag is set to <code class="neutral">true</code>, the grid loads the data from the server only once (using the appropriate datatype). After the first request, the datatype parameter is automatically changed to <code class="neutral">"local"</code> and all further manipulations are done on the client side. The functions of the pager (if present) are disabled.</td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.nv">
+	<td class="col0">
+		<code class="new-prop">grid.nv</code><br/>
+		<code class="old-prop">grid.nv</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.onDoubleClickRow">
+	<td class="col0">
+		<code class="new-prop">grid.onDoubleClickRow</code><br/>
+		<code class="old-prop">grid.ondblClickRow</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.onHeaderClick">
+	<td class="col0">
+		<code class="new-prop">grid.onHeaderClick</code><br/>
+		<code class="old-prop">grid.onHeaderClick</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.onInitGrid">
+	<td class="col0">
+		<code class="new-prop">grid.onInitGrid</code><br/>
+		<code class="old-prop">grid.onInitGrid</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.onPaging">
+	<td class="col0">
+		<code class="new-prop">grid.onPaging</code><br/>
+		<code class="old-prop">grid.onPaging</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.onSortCol">
+	<td class="col0">
+		<code class="new-prop">grid.onSortCol</code><br/>
+		<code class="old-prop">grid.onSortCol</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.page">
+	<td class="col0">
+		<code class="new-prop">grid.page</code><br/>
+		<code class="old-prop">grid.page</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Set the initial page number when we make the request.This parameter is passed to the url for use by the server routine retrieving the data. </td>
+	<td class="col3">1</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.postData">
+	<td class="col0">
+		<code class="new-prop">grid.postData</code><br/>
+		<code class="old-prop">grid.postData</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> This array is appended directly to the url. This is an associative array and can be used this way: <code class="neutral">{name1:value1...}</code>. See <acronym title="Application Programming Interface">API</acronym> methods for manipulation. </td>
+	<td class="col3">[]</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.remapColumns">
+	<td class="col0">
+		<code class="new-prop">grid.remapColumns</code><br/>
+		<code class="old-prop">grid.remapColumns</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.resizeClass">
+	<td class="col0">
+		<code class="new-prop">grid.resizeClass</code><br/>
+		<code class="old-prop">grid.resizeclass</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Assigns a class to columns that are resizable so that we can show a resize handle only for ones that are resizable. </td>
+	<td class="col3">""</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.rowTotal">
+	<td class="col0">
+		<code class="new-prop">grid.rowTotal</code><br/>
+		<code class="old-prop">grid.rowTotal</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> When set this parameter can instruct the server to load the total number of rows needed to work on. Note that <code class="new-prop">navBar.data.rowNum</code><code class="old-prop">grid.rowNum</code> determines the total records displayed in the grid, while <code class="new-prop">grid.rowTotal</code><code class="old-prop">grid.rowTotal</code> determines the total number of rows on which we can operate. When this parameter is set, we send an additional parameter to the server named <code>totalrows</code>. You can check for this parameter, and if it is available you can replace the <code>rows</code> parameter with this one. Mostly this parameter can be combined with <code class="new-prop">grid.applyLoadOnce</code><code class="old-prop">grid.loadonce</code> parameter set to <code class="neutral">true</code>.</td>
+	<td class="col3">null</td>
+	<td class="col4"> Yes</td>
+</tr>
+<tr id="grid.scroll">
+	<td class="col0">
+		<code class="new-prop">grid.scroll</code><br/>
+		<code class="old-prop">grid.scroll</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code> or <br/>  <code class="neutral">integer</code></td>
+	<td class="col2">Creates dynamic scrolling grids. When enabled, the pager elements are disabled and we can use the vertical scrollbar to load data. When set to <code class="neutral">true</code> the grid will always hold all the items from the start through to the latest point ever visited. <br/>  When <code>scroll</code> is set to an integer value  (example 1), the grid will just hold the visible lines. This allow us to load the data in portions whitout caring about memory leaks. In addition to this we have an optional extension to the server protocol: <code>npage</code> (see <code>prmNames</code> array). If you set the npage option in <code>prmNames</code>, then the grid will sometimes request more than one page at a time; if not, it will just perform multiple GET requests. </td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.scrollOffset">
+	<td class="col0">
+		<code class="new-prop">grid.scrollOffset</code><br/>
+		<code class="old-prop">grid.scrollOffset</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Determines the width of the vertical scrollbar. Since different browsers interpret this width differently (and it is difficult to calculate it in all browsers) this can be changed. </td>
+	<td class="col3">18</td>
+	<td class="col4">No.Method avail.</td>
+</tr>
+<tr id="grid.scrollTimeout">
+	<td class="col0">
+		<code class="new-prop">grid.scrollTimeout</code><br/>
+		<code class="old-prop">grid.scrollTimeout</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> This controls the timeout handler (in milliseconds) when <code>scroll</code> is set to 1. </td>
+	<td class="col3">200</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.scrollRows">
+	<td class="col0">
+		<code class="new-prop">grid.scrollRows</code><br/>
+		<code class="old-prop">grid.scrollrows</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> When enabled, selecting a row with <code>setSelection</code> scrolls the grid so that the selected row is visible. This is especially useful when we have a verticall scrolling grid and we use form editing with navigation buttons (next or previous row). On navigating to a hidden row, the grid scrolls so that the selected row becomes visible. </td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.isSearchable">
+	<td class="col0">
+		<code class="new-prop">grid.isSearchable</code><br/>
+		<code class="old-prop">grid.search</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="grid.isSortable">
+	<td class="col0">
+		<code class="new-prop">grid.isSortable</code><br/>
+		<code class="old-prop">grid.sortable</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> When set to <code class="neutral">true</code>, this option allows reordering columns by dragging and dropping them with the mouse. Since this option uses the jQuery UI sortable widget, be sure to load this widget and its related files in the <acronym title="HyperText Markup Language">HTML</acronym> head tag of the page. Also, be sure to select the jQuery UI Addons option under the jQuery UI Addon Methods section while downloading jqGrid if you want to use this facility. <strong>Note:</strong> The <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code> object also has a property called <code class="new-prop">grid.isSortable</code><code class="old-prop">grid.sortable</code>, which specifies if the grid data can be sorted on a particular column or not. </td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.sortName">
+	<td class="col0">
+		<code class="new-prop">grid.sortName</code><br/>
+		<code class="old-prop">grid.sortname</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The column according to which the data is to be sorted when it is initially loaded from the server (note that you will have to use datatypes xml or json to load remote data). This parameter is appended to the url. If this value is set and the index (name) matches the name from colModel, then an icon indicating that the grid is sorted according to this column is added to the column header. This icon also indicates the sorting order - descending or ascending (see the parameter <code class="new-prop">grid.sortOrder</code><code class="old-prop">grid.sortorder</code>). Also see <code>prmNames</code>. </td>
+	<td class="col3">""</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.sortOrder">
+	<td class="col0">
+		<code class="new-prop">grid.sortOrder</code><br/>
+		<code class="old-prop">grid.sortorder</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The initial sorting order (ascending or descending) when we fetch data from the server using datatypes xml or json. This parameter is appended to the url - see <code>prnNames</code>. The two allowed values are - <code class="neutral">"asc"</code> or <code class="neutral">"desc"</code>.</td>
+	<td class="col3">"asc"</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.toolbar">
+	<td class="col0">
+		<code class="new-prop">grid.toolbar</code><br/>
+		<code class="old-prop">grid.toolbar</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> This option defines the toolbar of the grid. This is an array with two elements in which the first element's value enables the toolbar and the second defines the position relative to the body layer (table data). Possible values are <code class="neutral">"top"</code>, <code class="neutral">"bottom"</code>, and <code class="neutral">"both"</code>. When we set it like <code>toolbar: [true,"both"]</code> two toolbars are created – one on the top of table data and the other at the bottom of the table data. When we have two toolbars, then we create two elements (div). The id of the top bar is constructed by concatenating the string "t_" and the id of the grid, like <code>"t_" + id_of_the_grid</code> and the id of the bottom toolbar is constructed by concatenating the string "tb_" and the id of the grid, like <code>"tb_" + id_of_the grid</code>. In the case where only one toolbar is created, we have the id as <code>"t_" + id_of_the_grid</code>, independent of where this toolbar is located (top or bottom)</td>
+	<td class="col3">[false, ""] </td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.topPager">
+	<td class="col0">
+		<code class="new-prop">grid.topPager</code><br/>
+		<code class="old-prop">grid.toppager</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">When enabled this option places a pager element at top of the grid, below the caption (if available). If another pager is defined, both can coexist and are kept in sync. The id of the newly created pager is the combination <code>grid_id + "_toppager"</code>. </td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.userData">
+	<td class="col0">
+		<code class="new-prop">grid.userData</code><br/>
+		<code class="old-prop">grid.userData</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> This array contains custom information from the request. Can be used at any time. </td>
+	<td class="col3">[]</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="grid.viewUserDataOnFooter">
+	<td class="col0">
+		<code class="new-prop">grid.viewUserDataOnFooter</code><br/>
+		<code class="old-prop">grid.userDataOnFooter</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> When set to <code class="neutral">true</code> we directly place the user data array <code class="new-prop">grid.userData</code><code class="old-prop">grid.userData</code> in the footer. The rules are as follows: If the <code class="new-prop">grid.userData</code><code class="old-prop">grid.userData</code> array contains a name which matches any name defined in <code class="new-prop">grid.column.models</code><code class="old-prop">grid.colModel</code>, then the value is placed in that column. If there are no such values nothing is placed. Note that if this option is used we use the current formatter options (if available) for that column.</td>
+	<td class="col3">false</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="grid.viewSortCols">
+	<td class="col0">
+		<code class="new-prop">grid.viewSortCols</code><br/>
+		<code class="old-prop">grid.viewsortcols</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> The purpose of this parameter is to define a different look and behavior for the sorting icons (up/down arrows) that appear in the column headers. This parameter is an array with the following default options <code class="new-prop">grid.viewSortCols: [false, "vertical", true]</code><code class="old-prop">grid.viewsortcols: [false, "vertical", true]</code>.<br/><br/>The first parameter determines if sorting icons should be visible on all the columns that have the sortable property set to <code class="neutral">true</code>. Setting this value to <code class="neutral">true</code> could be useful if you want to indicate to the user that (s)he can sort on that particular column. The default of <code class="neutral">false</code> sets the icon to be visible only on the column on which that data has been last sorted. Setting this parameter to <code class="neutral">true</code> causes all icons in all sortable columns to be visible.<br/><br/>The second parameter determines how icons should be placed<br/> <code class="neutral">"vertical"</code> means that the sorting arrows are one under the other.<br/> <code class="neutral">"horizontal"</code> means that the arrows should be next to one another. <br/><br/>The third parameter determines the click functionality. If set to <code class="neutral">true</code> the data is sorted if the user clicks anywhere in the column's header, not only the icons. If set to <code class="neutral">false</code> the data is sorted only when the sorting icons in the headers are clicked. <br/><br/><strong>Important:</strong> If you are setting the third element to <code class="neutral">false</code>, make sure that you set the first element to <code class="neutral">true</code>; if you don't, the icons will not be visible and the user will not know where to click to be able to sort since clicking just anywhere in the header will not guarantee a sort. </td>
+	<td class="col3">[false, "vertical", true]</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.htmlElm">
+	<td class="col0">
+		<code class="new-prop">navBar.htmlElm</code><br/>
+		<code class="old-prop">grid.pager</code>
+	</td>
+	<td class="col1">mixed</td>
+	<td class="col2"> Defines that we want to use a pager bar to navigate through the records. This must be a valid <acronym title="HyperText Markup Language">HTML</acronym> element; in our example we gave the div the id of "pager", but any name is acceptable. Note that the navigation layer (the "pager" div) can be positioned anywhere you want, determined by your <acronym title="HyperText Markup Language">HTML</acronym>; in our example we specified that the pager will appear after the  body layer. The valid settings can be (in the context of our example) <code class="neutral">"pager"</code>, <code class="neutral">"#pager"</code>, <code class="neutral">jQuery("#pager")</code>. I recommend to use the second one - <code class="neutral">"#pager"</code>. See <a href="/jqgridwiki/doku.php?id=wiki:pager" class="wikilink1" title="wiki:pager">Pager</a>. <del>Currently only one pagebar is possible.</del></td>
+	<td class="col3">""</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.position">
+	<td class="col0">
+		<code class="new-prop">navBar.position</code><br/>
+		<code class="old-prop">navBar.position</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.applyCloneToTop">
+	<td class="col0">
+		<code class="new-prop">navBar.applyCloneToTop</code><br/>
+		<code class="old-prop">navBar.cloneToTop</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.isCloseOnEscape">
+	<td class="col0">
+		<code class="new-prop">navBar.isCloseOnEscape</code><br/>
+		<code class="old-prop">navBar.closeOnEscape</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.pager.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.visible</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.pager.position">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.position</code><br/>
+		<code class="old-prop">grid.pagerpos</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Determines the position of the pager in the grid. By default the pager element when created is divided in 3 parts (one part for pager, one part for navigator buttons and one part for record information). </td>
+	<td class="col3">"center"</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.pager.text">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.text</code><br/>
+		<code class="old-prop">navBar.pgtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Show information about current page status. The first value is the current loaded page. The second value is the total number of pages. </td>
+	<td class="col3">See lang file</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="navBar.pager.pageBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.pageBtn.visible</code><br/>
+		<code class="old-prop">grid.pgbuttons</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Determines if the Pager buttons should be shown if pager is available. Also valid only if <code>pager</code> is set correctly. The buttons are placed in the pager bar. </td>
+	<td class="col3">true</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.pager.pageBtn.firstIcon">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.pageBtn.firstIcon</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.pager.pageBtn.prevIcon">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.pageBtn.prevIcon</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.pager.pageBtn.nextIcon">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.pageBtn.nextIcon</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.pager.pageBtn.lastIcon">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.pageBtn.lastIcon</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.pager.pageInput.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.pager.pageInput.visible</code><br/>
+		<code class="old-prop">grid.pginput</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Determines if the input box, where the user can change the number of the requested page, should be available. The input box appears in the pager bar. </td>
+	<td class="col3">true</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.data.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.data.visible</code><br/>
+		<code class="old-prop">grid.viewrecords</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> If <code class="neutral">true</code>, jqGrid displays the beginning and ending record number in the grid, out of the total number of records in the query.  This information is shown in the pager bar (bottom right by default)in this format: "View X to Y out of Z".  If this value is <code class="neutral">true</code>, there are other parameters that can be adjusted, including <code class="new-prop">grid.row.emptyRecordText</code><code class="old-prop">grid.emptyrecords</code> and <code class="new-prop">navBar.data.text</code><code class="old-prop">grid.recordtext</code>. </td>
+	<td class="col3">false</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.data.position">
+	<td class="col0">
+		<code class="new-prop">navBar.data.position</code><br/>
+		<code class="old-prop">grid.recordpos</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Determines the position of the record information in the pager. Can be <code class="neutral">"left"</code>, <code class="neutral">"center"</code>, <code class="neutral">"right"</code>. </td>
+	<td class="col3">"right"</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.data.text">
+	<td class="col0">
+		<code class="new-prop">navBar.data.text</code><br/>
+		<code class="old-prop">grid.recordtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> Text that can be shown in the pager. Also this option is valid if <code class="new-prop">navBar.data.visible</code><code class="old-prop">grid.viewrecords</code> option is set to <code class="neutral">true</code>. This text appears only if the total number of records is greater then zero. In order to show or hide some information the items in {} mean the following: <br/>  <code class="neutral">"{0}"</code> - the start position of the records depending on page number and number of requested records <br/>  <code class="neutral">"{1}"</code> - the end position <br/> <code class="neutral">"{2}"</code> - total records returned from the server. </td>
+	<td class="col3"> see lang file</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="navBar.data.lastPage">
+	<td class="col0">
+		<code class="new-prop">navBar.data.lastPage</code><br/>
+		<code class="old-prop">grid.lastpage</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Gives the total number of pages returned from the request. If you use a function as datatype, your_grid.setGridParam({lastpage: your_number}) can be used to specify the max pages in the pager. </td>
+	<td class="col3">0</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.data.rowList">
+	<td class="col0">
+		<code class="new-prop">navBar.data.rowList</code><br/>
+		<code class="old-prop">grid.rowList</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2"> An array to construct a select box element in the pager in which we can change the number of the visible rows. When changed during the execution, this parameter replaces the <code class="new-prop">navBar.data.rowNum</code><code class="old-prop">grid.rowNum</code> parameter that is passed to the url. If the array is empty, this element does not appear in the pager. Typically you can set this like <code class="neutral">[10, 20, 30]</code>. If the <code class="new-prop">navBar.data.rowNum</code><code class="old-prop">grid.rowNum</code> parameter is set to 30 then the selected value in the select box is 30. </td>
+	<td class="col3">[]</td>
+	<td class="col4">No</td>
+</tr>
+<tr id="navBar.data.rowNum">
+	<td class="col0">
+		<code class="new-prop">navBar.data.rowNum</code><br/>
+		<code class="old-prop">grid.rowNum</code>
+	</td>
+	<td class="col1"><code class="neutral">integer</code></td>
+	<td class="col2"> Sets how many records we want to view in the grid. This parameter is passed to the url for use by the server routine retrieving the data. Note that if you set this parameter to 10 (i.e. retrieve 10 records) and your server return 15 then only 10 records will be loaded. <del>Set this parameter to <strong>-1</strong>  (unlimited) to disable this checking.</del> </td>
+	<td class="col3">20</td>
+	<td class="col4">Yes</td>
+</tr>
+<tr id="navBar.actBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.visible</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.actBtn.position">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.position</code><br/>
+		<code class="old-prop">navBar.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="navBar.actBtn.addBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.addBtn.visible</code><br/>
+		<code class="old-prop">navBar.add</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Enables or disables the add action in the Navigator. When the button is clicked a editGridRow with parameter new method is executed</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.addBtn.icon">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.addBtn.icon</code><br/>
+		<code class="old-prop">navBar.addicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set a icon to be displayed if the add action is enabled. Note that currently only icons from UI theme images can be added</td>
+	<td class="col3">"ui-icon-plus"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.addBtn.text">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.addBtn.text</code><br/>
+		<code class="old-prop">navBar.addtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The text than can be set in the add button</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.addBtn.title">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.addBtn.title</code><br/>
+		<code class="old-prop">navBar.addtitle</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The title that appear when we mouse over to the add button (if enabled)</td>
+	<td class="col3">"Add new row"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.addBtn.callback">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.addBtn.callback</code><br/>
+		<code class="old-prop">navBar.addfunc</code>
+	</td>
+	<td class="col1"><code class="neutral">function</code></td>
+	<td class="col2 leftalign">If defined replaces the build in add function. No parameters are passed to this function  </td>
+	<td class="col3">null</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.editBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.editBtn.visible</code><br/>
+		<code class="old-prop">navBar.edit</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Enables or disables the edit action in the Navigator. When the button is clicked a editGridRow method is executed with parameter the - current selected row</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.editBtn.icon">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.editBtn.icon</code><br/>
+		<code class="old-prop">navBar.editicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set a icon to be displayed if the edit action is enabled. Note that currently only icons from UI theme images can be used</td>
+	<td class="col3">"ui-icon-pencil"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.editBtn.text">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.editBtn.text</code><br/>
+		<code class="old-prop">navBar.edittext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The text than can be set in the edit button</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.editBtn.title">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.editBtn.title</code><br/>
+		<code class="old-prop">navBar.edittitle</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The title that appear when we mouse over to the edit button (if enabled)</td>
+	<td class="col3">"Edit selected row"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.editBtn.callback">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.editBtn.callback</code><br/>
+		<code class="old-prop">navBar.editfunc</code>
+	</td>
+	<td class="col1"><code class="neutral">function</code></td>
+	<td class="col2 leftalign">If defined replaces the build in edit function. Parameter passed to this function is the id of the edited row  </td>
+	<td class="col3">null</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.delBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.delBtn.visible</code><br/>
+		<code class="old-prop">navBar.del</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2"> Enables or disables the delete action in the Navigator. When the button is clicked a <code class="neutral">delGridRow</code> method is executed.</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.delBtn.icon">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.delBtn.icon</code><br/>
+		<code class="old-prop">navBar.delicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set a icon to be displayed if the delete action is enabled. Note that currently only icons from UI theme images can be used</td>
+	<td class="col3">"ui-icon-trash"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.delBtn.text">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.delBtn.text</code><br/>
+		<code class="old-prop">navBar.deltext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The text than can be set in the delete button</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.delBtn.title">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.delBtn.title</code><br/>
+		<code class="old-prop">navBar.deltitle</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The title that appear when we mouse over to the delete button (if enabled)</td>
+	<td class="col3">"Delete selected row"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.delBtn.callback">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.delBtn.callback</code><br/>
+		<code class="old-prop">navBar.delfunc</code>
+	</td>
+	<td class="col1"><code class="neutral">function</code></td>
+	<td class="col2 leftalign">If defined replaces the build in del function. Parameter passed to this function is the id of the edited row  </td>
+	<td class="col3">null</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.srcBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.srcBtn.visible</code><br/>
+		<code class="old-prop">navBar.search</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Enables or disables the search button in the pager.When the button is clicked a searchGrid method is executed</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.srcBtn.icon">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.srcBtn.icon</code><br/>
+		<code class="old-prop">navBar.searchicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set a icon to be displayed if the search action is enabled. Note that currently only icons from UI theme images can be used</td>
+	<td class="col3">"ui-icon-search"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.srcBtn.text">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.srcBtn.text</code><br/>
+		<code class="old-prop">navBar.searchtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The text than can be set in the search button</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.srcBtn.title">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.srcBtn.title</code><br/>
+		<code class="old-prop">navBar.searchtitle</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The title that appear when we mouse over to the search button (if enabled)</td>
+	<td class="col3">"Find records"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.viewBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.viewBtn.visible</code><br/>
+		<code class="old-prop">navBar.view</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Enables or disables the view button in the pager. When the button is clicked a viewGridRow method is executed</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.viewBtn.icon">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.viewBtn.icon</code><br/>
+		<code class="old-prop">navBar.viewicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set a icon to be displayed if the search action is enabled. Note that currently only icons from UI theme images can be used</td>
+	<td class="col3">"ui-icon-document"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.viewBtn.text">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.viewBtn.text</code><br/>
+		<code class="old-prop">navBar.viewtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2"> The text that can be set in the view button</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.viewBtn.title">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.viewBtn.title</code><br/>
+		<code class="old-prop">navBar.viewtitle</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The title that appear when we mouse over to the view button (if enabled)</td>
+	<td class="col3">"View selected row"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.visible">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.visible</code><br/>
+		<code class="old-prop">navBar.refresh</code>
+	</td>
+	<td class="col1"><code class="neutral">boolean</code></td>
+	<td class="col2">Enables or disables the refresh button in the pager. When the button is clicked a trigger(<code class="neutral">reloadGrid</code>) is executed and the search parameters are cleared</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.icon">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.icon</code><br/>
+		<code class="old-prop">navBar.refreshicon</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Set a icon to be displayed if the refresh action is enabled. Note that currently only icons from UI theme images can be used</td>
+	<td class="col3">"ui-icon-refresh"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.text">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.text</code><br/>
+		<code class="old-prop">navBar.refreshtext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The text than can be set in the refresh button</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.title">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.title</code><br/>
+		<code class="old-prop">navBar.refreshtitle</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The title that appear when we mouse over to the refresh button (if enabled)</td>
+	<td class="col3">"Reload Grid"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.state">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.state</code><br/>
+		<code class="old-prop">navBar.refreshstate</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">Determines how the grid should be reloaded <br/> <code class="neutral">"firstpage"</code> - the grid reload the data from the  first page. <br/> <code class="neutral">"current"</code> - the reloading should save the current page and current selection</td>
+	<td class="col3">"firstpage"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.afterRefresh">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.afterRefresh</code><br/>
+		<code class="old-prop">navBar.afterRefresh</code>
+	</td>
+	<td class="col1"><code class="neutral">function</code></td>
+	<td class="col2">If defined this event fire after the refresh button is clicked</td>
+	<td class="col3">null</td>
+	<td class="col4"></td>
+</tr>
+<tr id="navBar.actBtn.refreshBtn.beforeRefresh">
+	<td class="col0">
+		<code class="new-prop">navBar.actBtn.refreshBtn.beforeRefresh</code><br/>
+		<code class="old-prop">navBar.beforeRefresh</code>
+	</td>
+	<td class="col1"><code class="neutral">function</code></td>
+	<td class="col2">If defined this event fire before the refresh button is clicked</td>
+	<td class="col3">null</td>
+	<td class="col4"></td>
+</tr>
+<tr id="alertRowWdw.caption">
+	<td class="col0">
+		<code class="new-prop">alertRowWdw.caption</code><br/>
+		<code class="old-prop">navBar.alertcap</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The header of the message that appear when we try to edit,delete or view  a row without to select it</td>
+	<td class="col3">"Warning"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="alertRowWdw.text">
+	<td class="col0">
+		<code class="new-prop">alertRowWdw.text</code><br/>
+		<code class="old-prop">navBar.alerttext</code>
+	</td>
+	<td class="col1"><code class="neutral">string</code></td>
+	<td class="col2">The message text that appear when we try to edit,delete or view  a row without to select it</td>
+	<td class="col3">"Please, select row"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.geo.top">
+	<td class="col0">
+		<code class="new-prop">editWdw.geo.top</code><br/>
+		<code class="old-prop">edit.top</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">the initial top position of modal dialog. The default value of 0 mean the top position from the upper left corner of the grid. When jqModal option is <code class="neutral">true</code> (see below) and jqModal plugin is present any value different from 0 mean the top position from upper left corner of the window. </td>
+	<td class="col3">0</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.geo.left">
+	<td class="col0">
+		<code class="new-prop">editWdw.geo.left</code><br/>
+		<code class="old-prop">edit.left</code>
+	</td>
+		<td class="col1"></td>
+		<td class="col2">the initial left position of modal dialog. The default value of 0 mean the left position from the upper left corner of the grid. When jqModal option is <code class="neutral">true</code> (see below) and jqModal plugin is present any value different from 0 mean the left position from upper left corner of the window. </td>
+		<td class="col3">0</td>
+		<td class="col4"></td>
+</tr>
+<tr id="editWdw.geo.width">
+	<td class="col0">
+		<code class="new-prop">editWdw.geo.width</code><br/>
+		<code class="old-prop">edit.width</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">the width of confirmation dialog</td>
+	<td class="col3">300</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.geo.height">
+	<td class="col0">
+		<code class="new-prop">editWdw.geo.height</code><br/>
+		<code class="old-prop">edit.height</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">the entry height of confirmation dialog</td>
+	<td class="col3">auto</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.geo.zIndex">
+	<td class="col0">
+		<code class="new-prop">editWdw.geo.zIndex</code><br/>
+		<code class="old-prop">edit.zIndex</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">The starting z-index for the dialog. If you will see the dialog form under another elements or dialogs you should use the parameter with some value higher as default value 950. In the most cases it should be the value higher as 1000 - the default value of jQuery UI dialog.</td>
+	<td class="col3">950</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.dragable">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.dragable</code><br/>
+		<code class="old-prop">edit.drag</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">Determines if the dialog is dragabale. Works only if jqDnR plugin is present or if the dragable widget is present from jQuery UI</td>
+	<td class="col3"> true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.resizable">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.resizable</code><br/>
+		<code class="old-prop">edit.resize</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">determines if the dialog can be resized. Works only is jqDnR plugin is available or resizable widget is present from jQuery UI</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.recreatable">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.recreatable</code><br/>
+		<code class="old-prop">edit.recreateForm</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">when set to <code class="neutral">true</code> the form is recreated every time the dialog is activated with the new options from colModel (if they are changed) </td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.closeOnEscape">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.closeOnEscape</code><br/>
+		<code class="old-prop">edit.closeOnEscape</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">When set to <code class="neutral">true</code> the modal window can be closed with ESC key from the user.</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.asModal">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.asModal</code><br/>
+		<code class="old-prop">edit.modal</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">determines if the dialog will be modal. Also works only if jqModal plugin is present</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.closeAfterEdit">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.closeAfterEdit</code><br/>
+		<code class="old-prop">edit.closeAfterEdit</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">when in edit mode, close the dialog after editing</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.bhvr.reloadAfterSubmit">
+	<td class="col0">
+		<code class="new-prop">editWdw.bhvr.reloadAfterSubmit</code><br/>
+		<code class="old-prop">edit.reloadAfterSubmit</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">reload grid data after posting</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.caption">
+	<td class="col0">
+		<code class="new-prop">editWdw.caption</code><br/>
+		<code class="old-prop">edit.editCaption</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.submitBtn.text">
+	<td class="col0">
+		<code class="new-prop">editWdw.submitBtn.text</code><br/>
+		<code class="old-prop">edit.bSubmit</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.submitBtn.icon">
+	<td class="col0">
+		<code class="new-prop">editWdw.submitBtn.icon</code><br/>
+		<code class="old-prop">edit.saveicon</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.cancelBtn.text">
+	<td class="col0">
+		<code class="new-prop">editWdw.cancelBtn.text</code><br/>
+		<code class="old-prop">edit.bCancel</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.cancelBtn.icon">
+	<td class="col0">
+		<code class="new-prop">editWdw.cancelBtn.icon</code><br/>
+		<code class="old-prop">edit.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.closeBtn.text">
+	<td class="col0">
+		<code class="new-prop">editWdw.closeBtn.text</code><br/>
+		<code class="old-prop">edit.bClose</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.closeBtn.icon">
+	<td class="col0">
+		<code class="new-prop">editWdw.closeBtn.icon</code><br/>
+		<code class="old-prop">edit.closeicon</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.yesBtn.text">
+	<td class="col0">
+		<code class="new-prop">editWdw.yesBtn.text</code><br/>
+		<code class="old-prop">edit.bYes</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.yesBtn.icon">
+	<td class="col0">
+		<code class="new-prop">editWdw.yesBtn.icon</code><br/>
+		<code class="old-prop">edit.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.noBtn.text">
+	<td class="col0">
+		<code class="new-prop">editWdw.noBtn.text</code><br/>
+		<code class="old-prop">edit.bNo</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.noBtn.icon">
+	<td class="col0">
+		<code class="new-prop">editWdw.noBtn.icon</code><br/>
+		<code class="old-prop">edit.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.exitBtn.text">
+	<td class="col0">
+		<code class="new-prop">editWdw.exitBtn.text</code><br/>
+		<code class="old-prop">edit.bExit</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.exitBtn.icon">
+	<td class="col0">
+		<code class="new-prop">editWdw.exitBtn.icon</code><br/>
+		<code class="old-prop">edit.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.pagerBtn.visible">
+	<td class="col0">
+		<code class="new-prop">editWdw.pagerBtn.visible</code><br/>
+		<code class="old-prop">edit.viewPagerBtns</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.pagerBtn.prevIcon">
+	<td class="col0">
+		<code class="new-prop">editWdw.pagerBtn.prevIcon</code><br/>
+		<code class="old-prop">edit.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.pagerBtn.nextIcon">
+	<td class="col0">
+		<code class="new-prop">editWdw.pagerBtn.nextIcon</code><br/>
+		<code class="old-prop">edit.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.dataNotYetSaved">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.dataNotYetSaved</code><br/>
+		<code class="old-prop">edit.msg.saveData</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.emptyRequiredVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.emptyRequiredVal</code><br/>
+		<code class="old-prop">edit.msg.required</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.wrongNumberVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.wrongNumberVal</code><br/>
+		<code class="old-prop">edit.msg.number</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.exceedMinVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.exceedMinVal</code><br/>
+		<code class="old-prop">edit.msg.minValue</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.exceedMaxVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.exceedMaxVal</code><br/>
+		<code class="old-prop">edit.msg.maxValue</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.wrongEmailVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.wrongEmailVal</code><br/>
+		<code class="old-prop">edit.msg.email</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.wrongIntegerVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.wrongIntegerVal</code><br/>
+		<code class="old-prop">edit.msg.integer</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.wrongDateVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.wrongDateVal</code><br/>
+		<code class="old-prop">edit.msg.date</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.wrongUrlVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.wrongUrlVal</code><br/>
+		<code class="old-prop">edit.msg.url</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.notDefinedVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.notDefinedVal</code><br/>
+		<code class="old-prop">edit.msg.nodefined</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.noReturnVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.noReturnVal</code><br/>
+		<code class="old-prop">edit.msg.novalue</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.wrongReturnArrayVal">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.wrongReturnArrayVal</code><br/>
+		<code class="old-prop">edit.msg.customarray</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.msgText.customFuncCheckNotExist">
+	<td class="col0">
+		<code class="new-prop">editWdw.msgText.customFuncCheckNotExist</code><br/>
+		<code class="old-prop">edit.msg.customfcheck</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.data.dataHeight">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.dataHeight</code><br/>
+		<code class="old-prop">edit.dataheight</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">This parameter control the scrolling content - i.e between the modal header and modal footer. The height parameter control the height of the entry modal, dataheight parameter control the height of the scrolling content keeping  the buttons at the footer visible</td>
+	<td class="col3">auto</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.url">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.url</code><br/>
+		<code class="old-prop">edit.url</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.data.method">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.method</code><br/>
+		<code class="old-prop">edit.mtype</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.data.editData">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.editData</code><br/>
+		<code class="old-prop">edit.editData</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.data.asJqModal">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.asJqModal</code><br/>
+		<code class="old-prop">edit.jqModal</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">If set to <code class="neutral">true</code> uses jqModal plugin (if present) to creat the dialogs. If set to <code class="neutral">true</code> and the plugin is not present jqGrid uses its internal function to create dialog</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.addedRow">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.addedRow</code><br/>
+		<code class="old-prop">edit.addedrow</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="editWdw.data.topInfo">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.topInfo</code><br/>
+		<code class="old-prop">edit.topinfo</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">When set this information is placed just after the modal header as additional row</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.bottomInfo">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.bottomInfo</code><br/>
+		<code class="old-prop">edit.bottominfo</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">When set this information is placed just after the buttons of the form as additional row</td>
+	<td class="col3">""</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.saveKey">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.saveKey</code><br/>
+		<code class="old-prop">edit.savekey</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">Determines the possibility to save the form with pressing a certain key.The first item enables/disables saving with pressing certain key. The second item corresponds to key code for saving. If enabled the default value for saving is [Enter]. <br/>  Note that this binding should be used for both adding and editing a row. Since the binding is for the form, there is no possibility to have one key in add and another in edit mode. </td>
+	<td class="col3">[false,13]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.navKeys">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.navKeys</code><br/>
+		<code class="old-prop">edit.navkeys</code>
+	</td>
+	<td class="col1"><code class="neutral">array</code></td>
+	<td class="col2">This option works only in edit mode and  add keyboard navigation, which allow us to navigate through the records while in form editing pressing certain keys. The default state is disabled. The first item enables/disables the navigation. The second item corresponds to reccord up and by default is the  the key code for Up key. The third item corresponds to reccord down and by default is the  key code for Down key</td>
+	<td class="col3">[false,38,40]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.checkOnSubmit">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.checkOnSubmit</code><br/>
+		<code class="old-prop">edit.checkOnSubmit</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">This option work only in editing mode. If Set to <code class="neutral">true</code> this option will work only when a submit button is clicked and  if any data is changed in the form. If the data is changed a dilog message appear where the user is asked to confirm the changes or cancel it. Pressing cancel button of the new dialog will return to the form, but does not set the values to its original state.</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.checkOnUpdate">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.checkOnUpdate</code><br/>
+		<code class="old-prop">edit.checkOnUpdate</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">This option is applicable in add and edit mode. When this option is set to <code class="neutral">true</code> the behaviour as follow: <br/>  when something is changed in the form and the user click on Cancel button, navigator buttons, close button (on upper right corner of the form), in overlay (if available) or press Esc key (if set) a message box appear asking the user to save the changes, not to save the changes or go back in the grid cancel all changes (this will close the modal form)</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="editWdw.data.ajaxEditOptions">
+	<td class="col0">
+		<code class="new-prop">editWdw.data.ajaxEditOptions</code><br/>
+		<code class="old-prop">edit.ajaxEditOptions</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">This option allow to set global ajax settings for the form editiing when we save the data to the server. Note that with this option is possible to overwrite all current ajax setting in the save request including the complete event.</td>
+	<td class="col3">{}</td>
+	<td class="col4"></td>
+</tr>
+<tr id="addWdw.caption">
+	<td class="col0">
+		<code class="new-prop">addWdw.caption</code><br/>
+		<code class="old-prop">edit.addCaption</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="addWdw.behaviour.closeAfterAdd">
+	<td class="col0">
+		<code class="new-prop">addWdw.behaviour.closeAfterAdd</code><br/>
+		<code class="old-prop">edit.closeAfterAdd</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">when add mode, close the dialog after add record</td>
+	<td class="col3">false</td>
+	<td class="col4"></td>
+</tr>
+<tr id="addWdw.behaviour.clearAfterAdd">
+	<td class="col0">
+		<code class="new-prop">addWdw.behaviour.clearAfterAdd</code><br/>
+		<code class="old-prop">edit.clearAfterAdd</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">when add mode, clear the data after adding data</td>
+	<td class="col3">true</td>
+	<td class="col4"></td>
+</tr>
+<tr id="delWdw.caption">
+	<td class="col0">
+		<code class="new-prop">delWdw.caption</code><br/>
+		<code class="old-prop">del.caption</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="delWdw.text">
+	<td class="col0">
+		<code class="new-prop">delWdw.text</code><br/>
+		<code class="old-prop">del.msg</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="delWdw.submitBtn.text">
+	<td class="col0">
+		<code class="new-prop">delWdw.submitBtn.text</code><br/>
+		<code class="old-prop">del.bSubmit</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="delWdw.submitBtn.icon">
+	<td class="col0">
+		<code class="new-prop">delWdw.submitBtn.icon</code><br/>
+		<code class="old-prop">del.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="delWdw.cancelBtn.text">
+	<td class="col0">
+		<code class="new-prop">delWdw.cancelBtn.text</code><br/>
+		<code class="old-prop">del.bCancel</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="delWdw.cancelBtn.icon">
+	<td class="col0">
+		<code class="new-prop">delWdw.cancelBtn.icon</code><br/>
+		<code class="old-prop">del.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="searchWdw.caption">
+	<td class="col0">
+		<code class="new-prop">searchWdw.caption</code><br/>
+		<code class="old-prop">src.caption</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="searchWdw.findBtn.text">
+	<td class="col0">
+		<code class="new-prop">searchWdw.findBtn.text</code><br/>
+		<code class="old-prop">src.Find</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="searchWdw.findBtn.icon">
+	<td class="col0">
+		<code class="new-prop">searchWdw.findBtn.icon</code><br/>
+		<code class="old-prop">src.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="searchWdw.resetBtn.text">
+	<td class="col0">
+		<code class="new-prop">searchWdw.resetBtn.text</code><br/>
+		<code class="old-prop">src.Reset</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="searchWdw.resetBtn.icon">
+	<td class="col0">
+		<code class="new-prop">searchWdw.resetBtn.icon</code><br/>
+		<code class="old-prop">src.x</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="searchWdw.compareText">
+	<td class="col0">
+		<code class="new-prop">searchWdw.compareText</code><br/>
+		<code class="old-prop">src.odata</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2">Translation strings that corresponds to the sopt options</td>
+	<td class="col3">[<br/>&nbsp;"equal",<br/>&nbsp;"not equal",<br/>&nbsp;"less",<br/>&nbsp;"less or equal",<br/>&nbsp;"greater",<br/>&nbsp;"greater or equal",<br/>&nbsp;"begins with",<br/>&nbsp;"does not begin with",<br/>&nbsp;"is in",<br/>&nbsp;"is not in",<br/>&nbsp;"ends with",<br/>&nbsp;"does not end with",<br/>&nbsp;"contains",<br/>&nbsp;"does not contain"<br/>]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="searchWdw.groupText">
+	<td class="col0">
+		<code class="new-prop">searchWdw.groupText</code><br/>
+		<code class="old-prop">src.groupOps</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2"></td>
+	<td class="col3">[{<br/>&nbsp;op:"AND",<br/>&nbsp;text:"all"<br/>},{<br/>&nbsp;op:"OR",<br/>&nbsp;text:"any"<br/>}]</td>
+	<td class="col4"></td>
+</tr>
+<tr id="searchWdw.matchText">
+	<td class="col0">
+		<code class="new-prop">searchWdw.matchText</code><br/>
+		<code class="old-prop">src.matchText</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2"></td>
+	<td class="col3">" match"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="searchWdw.rulesText">
+	<td class="col0">
+		<code class="new-prop">searchWdw.rulesText</code><br/>
+		<code class="old-prop">src.rulesText</code>
+	</td>
+	<td class="col1"></td>
+	<td class="col2"></td>
+	<td class="col3">" rules"</td>
+	<td class="col4"></td>
+</tr>
+<tr id="viewWdw.caption">
+	<td class="col0">
+		<code class="new-prop">viewWdw.caption</code><br/>
+		<code class="old-prop">view.caption</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="viewWdw.closeBtn.text">
+	<td class="col0">
+		<code class="new-prop">viewWdw.closeBtn.text</code><br/>
+		<code class="old-prop">view.bClose</code>
+	</td>
+	<td></td>
+</tr>
+<tr id="viewWdw.closeBtn.icon">
+	<td class="col0">
+		<code class="new-prop">viewWdw.closeBtn.icon</code><br/>
+		<code class="old-prop">view.x</code>
+	</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+
+<script src="../jquery.js"></script>
+<script>
+$("button").click(function(){
+	button = $(this);
+	if(button.html() == 'show old property') {
+		$(".new-prop").css("display", "none");
+		$(".old-prop").css("display", "inline");
+		$("#th0").html("name (old)");
+		button.html('show new property');
+	} else {
+		$(".new-prop").css("display", "inline");
+		$(".old-prop").css("display", "none");
+		$("#th0").html("name (new)");
+		button.html('show old property');
+	}
+	$(window).resize();
+});
+
+$(window).load(function(e){
+	$(this).resize();
+});
+
+$(window).resize(function(e){
+	$("#th0").css('min-width', $("#td0").width())
+	$("#th1").css('min-width', $("#td1").width())
+	$("#th2").css('min-width', $("#td2").width())
+	$("#th3").css('min-width', $("#td3").width())
+	$("#th4").css('min-width', $("#td4").width())
+});
+</script>
+
